@@ -25,25 +25,36 @@
         .event-info { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
         .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; }
 
-        /* Day/Night Details सहितको Fee List */
         .fee-list { text-align: left; margin-top: 25px; }
         .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; line-height: 1.4; }
         .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; border: 1px solid #ffeeb2; }
-        .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; pt: 10px; margin-top: 5px; padding-top: 10px; }
+        .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 5px; padding-top: 10px; }
 
         .qr-section { text-align: center; margin-top: 40px; }
         .qr-grid { display: flex; flex-direction: column; gap: 20px; align-items: center; }
         .qr-card { background: white; padding: 20px; border-radius: 20px; width: 100%; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #ddd; }
         .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
         .qr-card img { width: 100%; border-radius: 10px; }
+
+        /* नयाँ सम्पर्क विवरण सेक्सन */
+        .contact-section { margin-top: 40px; text-align: center; background: #fff; padding: 25px 15px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .contact-title { font-weight: bold; color: var(--lions-blue); font-size: 1.2em; margin-bottom: 20px; text-decoration: underline; }
+        .contact-grid { display: flex; justify-content: space-around; gap: 15px; text-align: center; flex-wrap: wrap; }
+        .contact-person { flex: 1; min-width: 140px; }
+        .contact-person strong { display: block; color: #333; font-size: 1.1em; }
+        .contact-person span { color: #666; font-size: 0.95em; }
+        .contact-person a { display: block; color: var(--lions-gold); text-decoration: none; font-weight: bold; margin-top: 5px; font-size: 1.1em; }
+
+        .designer-info { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 0.95em; }
+        .designer-info strong { color: #555; }
         
-        .footer { text-align: center; padding: 40px; color: #888; font-size: 1em; }
+        .footer-logo { text-align: center; padding: 40px; color: #bbb; font-size: 0.9em; }
 
         @media (max-width: 480px) {
             .header h2 { font-size: 1.6em; }
             .hero-title { font-size: 1.9em; }
-            .fee-item { padding: 15px; }
+            .contact-grid { flex-direction: column; gap: 25px; }
         }
     </style>
 </head>
@@ -95,9 +106,30 @@
             </div>
         </div>
     </div>
+
+    <div class="contact-section">
+        <div class="contact-title">For more Details</div>
+        <div class="contact-grid">
+            <div class="contact-person">
+                <span>Cabinet Secretary</span>
+                <strong>Pradumna Pokharel</strong>
+                <a href="tel:9851027974">9851027974</a>
+            </div>
+            <div class="contact-person">
+                <span>Cabinet Secretary</span>
+                <strong>Krishna Jyoti Shakya</strong>
+                <a href="tel:9851030055">9851030055</a>
+            </div>
+        </div>
+
+        <div class="designer-info">
+            Design by <strong>Nirajan Aryal</strong><br>
+            <a href="tel:9851113811" style="color: #888; text-decoration: none;">9851113811</a>
+        </div>
+    </div>
 </div>
 
-<div class="footer">
+<div class="footer-logo">
     <p>डिस्ट्रिक्ट ३२५ एफ, क्याबिनेट सचिवालय</p>
 </div>
 
