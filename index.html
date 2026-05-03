@@ -23,9 +23,12 @@
         .hero-title { color: var(--lions-gold); font-size: 2.4em; margin: 10px 0; font-weight: 900; }
         
         .event-info { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+        
+        /* आइकन स्टाइल र साइज */
+        .icon { font-size: 1.3em; margin-right: 8px; color: var(--lions-blue); vertical-align: middle; }
+        
         .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; }
 
-        /* होटेलको फोटोको लागि स्टाइल */
         .hotel-photo { width: 100%; border-radius: 12px; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
         .fee-list { text-align: left; margin-top: 25px; }
@@ -34,7 +37,9 @@
         .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
         .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 5px; padding-top: 10px; }
 
-        .qr-section { text-align: center; margin-top: 40px; }
+        .notice-box { background: #fff5f5; border: 1px dashed #f56565; color: #c53030; padding: 15px; border-radius: 10px; margin: 20px 0; font-size: 1.05em; font-weight: 600; line-height: 1.6; text-align: left; }
+
+        .qr-section { text-align: center; margin-top: 20px; }
         .qr-grid { display: flex; flex-direction: column; gap: 20px; align-items: center; }
         .qr-card { background: white; padding: 20px; border-radius: 20px; width: 100%; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #ddd; }
         .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
@@ -78,10 +83,10 @@
         <div class="hero-title">Cabinet Schooling</div>
         
         <div class="event-info">
-            <div class="info-tag">📅 २०८३ जेठ ८, ९ र १० गते</div>
+            <div class="info-tag"><span class="icon">📅</span> मिति: २०८३ जेठ ८, ९ र १० गते</div>
             <div class="info-tag">
-                📍 गोदावरी फरेस्ट रिसोर्ट, ललितपुर
-                <img src="Godavari Hotel.jpeg" alt="Godavari Forest Resort" class="hotel-photo">
+                <span class="icon">📍</span> स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+                <img src="1000143478.jpg" alt="Godavari Forest Resort" class="hotel-photo">
             </div>
         </div>
 
@@ -99,6 +104,10 @@
                 <span class="stay-detail">🌙 १ रात २ दिन</span>
                 <span class="amount">रु. १९,०००/-</span>
             </div>
+        </div>
+
+        <div class="notice-box">
+            📢 कृपया रकम भुक्तानी पश्चात बैंक भौचरको कपी सहीत तपाईको नाम र क्लवको नाम सहित Cabinet Treasurer लायन कृष्ण ज्योती शाक्य लाई पठाउनुहोला ।
         </div>
     </div>
 
