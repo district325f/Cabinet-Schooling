@@ -5,22 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabinet Schooling - District 325 F</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; line-height: 1.6; }
-        .header { background: #003366; color: white; text-align: center; padding: 20px; }
-        .header img { width: 100px; margin-bottom: 10px; }
-        .hero { background: white; text-align: center; padding: 30px 20px; border-bottom: 5px solid #003366; }
-        .hero h1 { color: #e67e22; font-size: 2.2em; margin: 10px 0; }
-        .container { max-width: 800px; margin: 20px auto; background: #76a0a1; color: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .details-box { background: rgba(255, 255, 255, 0.15); padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 5px solid #003366; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; color: #333; font-size: 0.9em; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #f2f2f2; color: #003366; }
-        .payment-info { background: #ffffff; color: #333; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .qr-container { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px; gap: 15px; }
-        .qr-box { text-align: center; background: #003366; color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 250px; }
-        .qr-box img { width: 100%; max-width: 220px; background: white; padding: 5px; border-radius: 5px; margin-top: 10px; }
-        .footer { text-align: center; padding: 20px; font-weight: bold; color: #003366; }
-        hr { width: 50%; border: 1px solid #76a0a1; margin: 10px auto; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f0f2f5; color: #1c1e21; line-height: 1.6; }
+        .header { background: #003366; color: white; text-align: center; padding: 25px 15px; border-bottom: 4px solid #e67e22; }
+        .header img { width: 80px; height: auto; margin-bottom: 10px; }
+        .header h2 { margin: 0; font-size: 1.4em; letter-spacing: 1px; }
+        .hero { background: white; text-align: center; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .hero h1 { color: #e67e22; font-size: 1.8em; margin: 5px 0; text-transform: uppercase; }
+        .hero h3 { color: #003366; margin: 5px 0; font-size: 1.1em; }
+        .container { max-width: 600px; margin: 10px auto; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .welcome-text { text-align: justify; font-size: 1.05em; color: #444; }
+        .details-box { background: #e7f3ff; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 6px solid #003366; }
+        .details-box strong { color: #003366; display: block; margin-bottom: 5px; font-size: 1.1em; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #dee2e6; padding: 12px 8px; text-align: left; }
+        th { background-color: #003366; color: white; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        .payment-info { background: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; margin-top: 20px; color: #856404; }
+        .payment-info h3 { margin-top: 0; color: #003366; border-bottom: 2px solid #003366; display: inline-block; }
+        .qr-section { margin-top: 30px; text-align: center; }
+        .qr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .qr-card { background: #003366; color: white; padding: 15px; border-radius: 12px; }
+        .qr-card p { margin: 0 0 10px 0; font-weight: bold; font-size: 0.9em; }
+        .qr-card img { width: 100%; border-radius: 8px; background: white; padding: 5px; box-sizing: border-box; }
+        .footer { text-align: center; padding: 30px 15px; color: #666; font-size: 0.9em; }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.5em; }
+            .qr-grid { grid-template-columns: 1fr; }
+            .container { margin: 10px; padding: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -31,31 +43,31 @@
 </div>
 
 <div class="hero">
-    <hr>
-    <h1>Cabinet Schooling</h1>
     <h3>LY 2026-2027</h3>
-    <hr>
+    <h1>Cabinet Schooling</h1>
+    <p style="color: #666;">२०८३ जेठ ८, ९ र १० गते</p>
 </div>
 
 <div class="container">
-    <p>आदरणीय क्याबिनेट अफिसर साथीहरू,</p>
-    <p>लायन वर्ष २०२६-२०२७ लाई थप प्रभावकारी र ऊर्जावान् बनाउनका लागि आयोजित <strong>"क्याबिनेट स्कुलिङ"</strong> कार्यक्रममा यहाँहरूको गरिमामय उपस्थितिका लागि हार्दिक निमन्त्रणा गर्दछौं।</p>
-
-    <div class="details-box">
-        <strong>📍 कार्यक्रमको विवरण:</strong><br>
-        मिति: २०८३ जेठ ८, ९ र १० गते<br>
-        स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+    <div class="welcome-text">
+        <p>आदरणीय क्याबिनेट अफिसर साथीहरू,</p>
+        <p>लायन वर्ष २०२६-२०२७ लाई थप प्रभावकारी बनाउन आयोजित <strong>"क्याबिनेट स्कुलिङ"</strong> कार्यक्रममा हार्दिक निमन्त्रणा गर्दछौं। कृपया समयमै रजिष्ट्रेसन सुनिश्चित गर्नुहोला।</p>
     </div>
 
-    <h3>रजिष्ट्रेसन शुल्क विवरण:</h3>
+    <div class="details-box">
+        <strong>📍 कार्यक्रम स्थल:</strong>
+        गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+    </div>
+
+    <h3>रजिष्ट्रेसन शुल्क:</h3>
     <table>
         <tr>
-            <th>पद/विवरण</th>
+            <th>विवरण</th>
             <th>अवधि</th>
             <th>शुल्क (रु.)</th>
         </tr>
         <tr>
-            <td>GAT Team, CCC, Cluster Chief, Zone/Region Chairperson</td>
+            <td>GAT, CCC, Cluster, Zone/Region Chairperson</td>
             <td>२ रात ३ दिन</td>
             <td>रु. २५,०००/-</td>
         </tr>
@@ -69,24 +81,27 @@
     <div class="payment-info">
         <h3>बैंक विवरण:</h3>
         <p><strong>लक्ष्मी सनराइज बैंक लिमिटेड</strong><br>
-        खाता नाम: Krishna Jyoti Shakya<br>
-        खाता नम्बर: 01025001144</p>
+        नाम: Krishna Jyoti Shakya<br>
+        खाता: 01025001144</p>
     </div>
 
-    <div class="qr-container">
-        <div class="qr-box">
-            <strong>Scan & Pay</strong>
-            <img src="file_00000000e28871faa125473926f0ca238a221f753c9e6f21226164223a22313030303134333530312e6a7067227d.jpeg" alt="Scan to Pay">
-        </div>
-        <div class="qr-box">
-            <strong>Scan & Go</strong>
-            <img src="20260503_155534_0000.png" alt="Scan to Go">
+    <div class="qr-section">
+        <h3 style="color: #003366;">Scan to Pay & Register</h3>
+        <div class="qr-grid">
+            <div class="qr-card">
+                <p>Scan & Pay</p>
+                <img src="Scan & Pay.png" alt="Scan to Pay">
+            </div>
+            <div class="qr-card">
+                <p>Scan & Go</p>
+                <img src="Scan & Go.png" alt="Scan to Go">
+            </div>
         </div>
     </div>
 </div>
 
 <div class="footer">
-    <p>धन्यवाद,<br>डिस्ट्रिक्ट ३२५ एफ, क्याबिनेट सचिवालय</p>
+    <p>धन्यवाद!<br>डिस्ट्रिक्ट ३२५ एफ, क्याबिनेट सचिवालय</p>
 </div>
 
 </body>
