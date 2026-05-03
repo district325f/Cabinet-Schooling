@@ -55,6 +55,7 @@
         .contact-row { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; }
         .contact-person { width: 45%; }
         .contact-person.right { text-align: right; }
+        .contact-person .role-title { color: #666; font-size: 0.9em; font-weight: 600; display: block; margin-bottom: 2px; }
         .contact-person .name { color: #333; font-size: 1.1em; font-weight: 800; display: block; }
         .contact-person a { color: var(--lions-gold); text-decoration: none; font-weight: bold; }
 
@@ -134,11 +135,11 @@
         <div class="qr-grid">
             <div class="qr-card">
                 <p>Scan & Pay</p>
-                <img src="Scan%20&%20Pay.png" alt="Scan to Pay">
+                <img src="Scan & Pay.png" alt="Scan to Pay">
             </div>
             <div class="qr-card">
                 <p>Scan & Go</p>
-                <img src="Scan%20&%20Go.png" alt="Scan to Go">
+                <img src="Scan & Go.png" alt="Scan to Go">
             </div>
         </div>
     </div>
@@ -147,10 +148,12 @@
         <div class="contact-title">For more Details</div>
         <div class="contact-row">
             <div class="contact-person">
+                <span class="role-title">Cabinet Secretary</span>
                 <span class="name">Pradumna Kumar Pokharel</span>
                 <a href="tel:9851027974">9851027974</a>
             </div>
             <div class="contact-person right">
+                <span class="role-title">Cabinet Treasurer</span>
                 <span class="name">Krishna Jyoti Shakya</span>
                 <a href="tel:9851030055">9851030055</a>
             </div>
@@ -175,8 +178,8 @@
 
         var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0a" + 
                       "क्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a" +
-                      "**नाम:** " + name + "%0a" +
-                      "**क्लव:** " + club + "%0a%0a" +
+                      "*नाम:* " + name + "%0a" +
+                      "*क्लव:* " + club + "%0a%0a" +
                       "मैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु।";
 
         window.open("https://wa.me/977" + phone + "?text=" + message, '_blank');
