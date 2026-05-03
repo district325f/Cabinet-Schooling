@@ -25,6 +25,9 @@
         .event-info { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
         .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; }
 
+        /* होटेलको फोटोको लागि स्टाइल */
+        .hotel-photo { width: 100%; border-radius: 12px; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
         .fee-list { text-align: left; margin-top: 25px; }
         .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; }
         .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; line-height: 1.4; }
@@ -37,7 +40,6 @@
         .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
         .qr-card img { width: 100%; border-radius: 10px; }
 
-        /* सुधारेको सम्पर्क विवरण सेक्सन - दुई साईड मिलाइएको */
         .contact-section { margin-top: 40px; background: #fff; padding: 25px 20px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .contact-title { text-align: center; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; margin-bottom: 25px; text-decoration: underline; }
         
@@ -57,7 +59,6 @@
         @media (max-width: 480px) {
             .header h2 { font-size: 1.6em; }
             .hero-title { font-size: 1.9em; }
-            /* मोबाइलमा सानो स्क्रिन भए पनि दुई साईडमै देखिने गरी फन्ट अलि सानो पारिएको */
             .contact-person .name { font-size: 0.95em; }
             .contact-person a { font-size: 1em; }
         }
@@ -78,7 +79,10 @@
         
         <div class="event-info">
             <div class="info-tag">📅 २०८३ जेठ ८, ९ र १० गते</div>
-            <div class="info-tag">📍 गोदावरी फरेस्ट रिसोर्ट, ललितपुर</div>
+            <div class="info-tag">
+                📍 गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+                <img src="Godavari Hotel.jpg" alt="Godavari Forest Resort" class="hotel-photo">
+            </div>
         </div>
 
         <h3 style="color: var(--lions-blue); text-align: left; margin-bottom: 15px; font-size: 1.4em;">रजिष्ट्रेसन शुल्क र विवरण:</h3>
@@ -113,15 +117,15 @@
     </div>
 
     <div class="contact-section">
-        <div class="contact-title">For more detail's</div>
+        <div class="contact-title">For more Details</div>
         <div class="contact-row">
             <div class="contact-person">
                 <span class="position">Cabinet Secretary</span>
-                <span class="name">Pradumna Kumar Pokharel</span>
+                <span class="name">Pradumna Pokharel</span>
                 <a href="tel:9851027974">9851027974</a>
             </div>
             <div class="contact-person right">
-                <span class="position">Cabinet Treasurer</span>
+                <span class="position">Cabinet Secretary</span>
                 <span class="name">Krishna Jyoti Shakya</span>
                 <a href="tel:9851030055">9851030055</a>
             </div>
