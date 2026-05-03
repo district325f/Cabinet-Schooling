@@ -24,12 +24,13 @@
         
         .event-info { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
         
-        /* आइकन स्टाइल र साइज */
-        .icon { font-size: 1.3em; margin-right: 8px; color: var(--lions-blue); vertical-align: middle; }
+        /* सादा आइकनको लागि स्टाइल */
+        .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
         
-        .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; }
+        /* सादा क्यालेन्डर SVG - कुनै नम्बर नभएको */
+        .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); flex-shrink: 0; }
 
-        .hotel-photo { width: 100%; border-radius: 12px; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .hotel-photo { width: 100%; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
         .fee-list { text-align: left; margin-top: 25px; }
         .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; }
@@ -57,15 +58,12 @@
         .contact-person a { color: var(--lions-gold); text-decoration: none; font-weight: bold; font-size: 1.1em; }
 
         .designer-info { margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 0.95em; }
-        .designer-info strong { color: #555; }
         
         .footer-logo { text-align: center; padding: 40px; color: #bbb; font-size: 0.9em; }
 
         @media (max-width: 480px) {
             .header h2 { font-size: 1.6em; }
             .hero-title { font-size: 1.9em; }
-            .contact-person .name { font-size: 0.95em; }
-            .contact-person a { font-size: 1em; }
         }
     </style>
 </head>
@@ -83,11 +81,19 @@
         <div class="hero-title">Cabinet Schooling</div>
         
         <div class="event-info">
-            <div class="info-tag"><span class="icon">📅</span> मिति: २०८३ जेठ ८, ९ र १० गते</div>
             <div class="info-tag">
-                <span class="icon">📍</span> स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
-                <img src="1000143478.jpg" alt="Godavari Forest Resort" class="hotel-photo">
+                <svg class="plain-icon" viewBox="0 0 24 24">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                </svg>
+                मिति: २०८३ जेठ ८, ९ र १० गते
             </div>
+            <div class="info-tag">
+                <svg class="plain-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+            </div>
+            <img src="1000143478.jpg" alt="Godavari Forest Resort" class="hotel-photo">
         </div>
 
         <h3 style="color: var(--lions-blue); text-align: left; margin-bottom: 15px; font-size: 1.4em;">रजिष्ट्रेसन शुल्क र विवरण:</h3>
