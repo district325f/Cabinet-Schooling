@@ -26,9 +26,9 @@
         .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; }
 
         .fee-list { text-align: left; margin-top: 25px; }
-        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; }
         .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; line-height: 1.4; }
-        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; border: 1px solid #ffeeb2; }
+        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
         .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 5px; padding-top: 10px; }
 
         .qr-section { text-align: center; margin-top: 40px; }
@@ -37,16 +37,19 @@
         .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
         .qr-card img { width: 100%; border-radius: 10px; }
 
-        /* नयाँ सम्पर्क विवरण सेक्सन */
-        .contact-section { margin-top: 40px; text-align: center; background: #fff; padding: 25px 15px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .contact-title { font-weight: bold; color: var(--lions-blue); font-size: 1.2em; margin-bottom: 20px; text-decoration: underline; }
-        .contact-grid { display: flex; justify-content: space-around; gap: 15px; text-align: center; flex-wrap: wrap; }
-        .contact-person { flex: 1; min-width: 140px; }
-        .contact-person strong { display: block; color: #333; font-size: 1.1em; }
-        .contact-person span { color: #666; font-size: 0.95em; }
-        .contact-person a { display: block; color: var(--lions-gold); text-decoration: none; font-weight: bold; margin-top: 5px; font-size: 1.1em; }
+        /* सुधारेको सम्पर्क विवरण सेक्सन - दुई साईड मिलाइएको */
+        .contact-section { margin-top: 40px; background: #fff; padding: 25px 20px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .contact-title { text-align: center; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; margin-bottom: 25px; text-decoration: underline; }
+        
+        .contact-row { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; }
+        .contact-person { width: 45%; }
+        .contact-person.right { text-align: right; }
+        
+        .contact-person .position { color: #666; font-size: 0.9em; display: block; margin-bottom: 3px; font-weight: 600; }
+        .contact-person .name { color: #333; font-size: 1.1em; font-weight: 800; display: block; margin-bottom: 5px; }
+        .contact-person a { color: var(--lions-gold); text-decoration: none; font-weight: bold; font-size: 1.1em; }
 
-        .designer-info { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 0.95em; }
+        .designer-info { margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 0.95em; }
         .designer-info strong { color: #555; }
         
         .footer-logo { text-align: center; padding: 40px; color: #bbb; font-size: 0.9em; }
@@ -54,7 +57,9 @@
         @media (max-width: 480px) {
             .header h2 { font-size: 1.6em; }
             .hero-title { font-size: 1.9em; }
-            .contact-grid { flex-direction: column; gap: 25px; }
+            /* मोबाइलमा सानो स्क्रिन भए पनि दुई साईडमै देखिने गरी फन्ट अलि सानो पारिएको */
+            .contact-person .name { font-size: 0.95em; }
+            .contact-person a { font-size: 1em; }
         }
     </style>
 </head>
@@ -109,15 +114,15 @@
 
     <div class="contact-section">
         <div class="contact-title">For more Details</div>
-        <div class="contact-grid">
+        <div class="contact-row">
             <div class="contact-person">
-                <span>Cabinet Secretary</span>
-                <strong>Pradumna Pokharel</strong>
+                <span class="position">Cabinet Secretary</span>
+                <span class="name">Pradumna Pokharel</span>
                 <a href="tel:9851027974">9851027974</a>
             </div>
-            <div class="contact-person">
-                <span>Cabinet Secretary</span>
-                <strong>Krishna Jyoti Shakya</strong>
+            <div class="contact-person right">
+                <span class="position">Cabinet Secretary</span>
+                <span class="name">Krishna Jyoti Shakya</span>
                 <a href="tel:9851030055">9851030055</a>
             </div>
         </div>
