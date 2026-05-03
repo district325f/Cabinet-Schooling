@@ -28,33 +28,43 @@
 
         .hotel-photo { width: 100%; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
+        .fee-list { text-align: left; margin-top: 25px; }
+        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; }
+        .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; line-height: 1.4; }
+        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 5px; padding-top: 10px; }
+
         .notice-box { background: #fff5f5; border: 1px dashed #f56565; color: #c53030; padding: 15px; border-radius: 10px; margin: 20px 0; font-size: 1.05em; font-weight: 600; line-height: 1.6; text-align: left; }
 
-        /* Updated Form Styles */
-        .reg-form { background: #e8f5e9; border-radius: 15px; padding: 20px; text-align: left; margin-top: 10px; border: 2px solid #25d366; }
+        /* WhatsApp Form Styles */
+        .reg-form { background: #e8f5e9; border-radius: 15px; padding: 20px; text-align: left; margin-top: 10px; border: 1px solid #c8e6c9; }
         .reg-form h4 { color: #2e7d32; margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
         .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em; }
-        
-        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; font-weight: bold; font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform 0.2s; }
-        .btn-whatsapp:active { transform: scale(0.98); }
-
-        .fee-list { text-align: left; margin-top: 25px; }
-        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; }
-        .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; }
-        .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 5px; padding-top: 10px; }
+        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; font-weight: bold; font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
 
         .qr-section { text-align: center; margin-top: 40px; }
         .qr-grid { display: flex; flex-direction: column; gap: 20px; align-items: center; }
         .qr-card { background: white; padding: 20px; border-radius: 20px; width: 100%; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #ddd; }
+        .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
         .qr-card img { width: 100%; border-radius: 10px; }
 
-        .contact-section { margin-top: 40px; background: #fff; padding: 25px 20px; border-radius: 20px; text-align: center; }
-        .contact-row { display: flex; justify-content: space-between; }
+        .contact-section { margin-top: 40px; background: #fff; padding: 25px 20px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .contact-title { text-align: center; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; margin-bottom: 25px; text-decoration: underline; }
+        .contact-row { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; }
+        .contact-person { width: 45%; }
+        .contact-person.right { text-align: right; }
+        .contact-person .name { color: #333; font-size: 1.1em; font-weight: 800; display: block; }
         .contact-person a { color: var(--lions-gold); text-decoration: none; font-weight: bold; }
 
-        .designer-info { margin-top: 30px; text-align: center; color: #888; font-size: 0.9em; }
+        .designer-info { margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 0.95em; }
+        .footer-logo { text-align: center; padding: 40px; color: #bbb; font-size: 0.9em; }
+
+        @media (max-width: 480px) {
+            .header h2 { font-size: 1.6em; }
+            .hero-title { font-size: 1.9em; }
+        }
     </style>
 </head>
 <body>
@@ -79,16 +89,31 @@
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
             </div>
-            <img src="1000143478.jpg" alt="Godavari Hotel" class="hotel-photo">
+            <img src="Godavari Hotel.jpeg" alt="Godavari Hotel" class="hotel-photo">
+        </div>
+
+        <h3 style="color: var(--lions-blue); text-align: left; margin-bottom: 15px;">रजिष्ट्रेसन शुल्क र विवरण:</h3>
+        
+        <div class="fee-list">
+            <div class="fee-item">
+                <span class="role">GAT Teams, Chief Cluster, Cluster, Zone/Region Chairperson को लागी</span>
+                <span class="stay-detail">🌙 २ रात ३ दिन</span>
+                <span class="amount">रु. २५,०००/-</span>
+            </div>
+            <div class="fee-item">
+                <span class="role">अन्य क्याबिनेट अफिसरहरूको लागी</span>
+                <span class="stay-detail">🌙 १ रात २ दिन</span>
+                <span class="amount">रु. १९,०००/-</span>
+            </div>
         </div>
 
         <div class="notice-box">
-            📢 <b>भुक्तानी विवरण पठाउने तरिका:</b><br>
-            तल आफ्नो नाम र क्लव लेखी बटन थिच्नुहोस्, त्यसपछि खुल्ने WhatsApp म्यासेजसँगै बैंक भौचरको फोटो पठाउनुहोला।
+            📢 भुक्तानी विवरण पठाउने तरिका:
+कृपयि तल आफ्नो नाम र क्लवको नाम लेखी बटन थिच्नुहोस्, त्यसपछि WhatsApp म्यासेजसँगै बैंक भौचरको फोटो पठाउनुहोला । धन्यवाद !
         </div>
 
         <div class="reg-form">
-            <h4>🟢 Registration Details</h4>
+            <h4>📝 विवरण पठाउनुहोस्</h4>
             <div class="form-group">
                 <label>सहभागीको नाम:</label>
                 <input type="text" id="userName" placeholder="पुरा नाम लेख्नुहोस्">
@@ -97,10 +122,9 @@
                 <label>क्लवको नाम:</label>
                 <input type="text" id="clubName" placeholder="तपाईको क्लवको नाम">
             </div>
-            
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">* थिचेपछि WhatsApp खुल्नेछ, त्यहाँबाट भौचर फोटो पठाउनुहोला।</p>
             <button class="btn-whatsapp" onclick="sendWhatsApp()">
-                <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
-                Open WhatsApp to Send Details
+                Send to WhatsApp
             </button>
         </div>
     </div>
@@ -112,6 +136,10 @@
                 <p>Scan & Pay</p>
                 <img src="Scan%20&%20Pay.png" alt="Scan to Pay">
             </div>
+            <div class="qr-card">
+                <p>Scan & Go</p>
+                <img src="Scan%20&%20Go.png" alt="Scan to Go">
+            </div>
         </div>
     </div>
 
@@ -119,15 +147,18 @@
         <div class="contact-title">For more Details</div>
         <div class="contact-row">
             <div class="contact-person">
-                <span class="name">Pradumna Kumar Pokharel</span><br>
+                <span class="name">Pradumna Kumar Pokharel</span>
                 <a href="tel:9851027974">9851027974</a>
             </div>
-            <div class="contact-person">
-                <span class="name">Krishna Jyoti Shakya</span><br>
+            <div class="contact-person right">
+                <span class="name">Krishna Jyoti Shakya</span>
                 <a href="tel:9851030055">9851030055</a>
             </div>
         </div>
-        <div class="designer-info">Design by <strong>Nirajan Aryal</strong> (9851113811)</div>
+        <div class="designer-info">
+            Design by <strong>Nirajan Aryal</strong><br>
+            <a href="tel:9851113811" style="color: #888; text-decoration: none;">9851113811</a>
+        </div>
     </div>
 </div>
 
@@ -138,18 +169,16 @@
         var phone = "9851030055"; // कृष्ण ज्योती शाक्यको नम्बर
 
         if (name == "" || club == "") {
-            alert("कृपया नाम र क्लवको नाम भर्नुहोला।");
+            alert("कृपया नाम र क्लवको नाम लेख्नुहोस्।");
             return;
         }
 
-        // तपाईँले भन्नुभएको सम्बोधन सहितको म्यासेज
         var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0a" + 
                       "क्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a" +
-                      "*नाम:* " + name + "%0a" +
-                      "*क्लव:* " + club + "%0a%0a" +
+                      "**नाम:** " + name + "%0a" +
+                      "**क्लव:** " + club + "%0a%0a" +
                       "मैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु।";
 
-        // WhatsApp लिंक खोल्ने
         window.open("https://wa.me/977" + phone + "?text=" + message, '_blank');
     }
 </script>
