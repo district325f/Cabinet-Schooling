@@ -8,46 +8,42 @@
         :root {
             --lions-blue: #003366;
             --lions-gold: #e67e22;
-            --light-bg: #f0f4f8;
+            --light-bg: #f4f7f9;
         }
         body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #2c3e50; }
         
-        /* Premium Header */
         .header { background: var(--lions-blue); color: white; text-align: center; padding: 40px 15px; border-bottom: 6px solid var(--lions-gold); }
         .header img { width: 100px; height: auto; margin-bottom: 10px; }
-        .header h2 { margin: 5px 0; font-size: 1.8em; font-weight: bold; text-transform: uppercase; }
-        .header h3 { margin: 0; font-size: 1.4em; opacity: 0.9; }
+        .header h2 { margin: 5px 0; font-size: 2em; font-weight: bold; text-transform: uppercase; }
+        .header h3 { margin: 0; font-size: 1.5em; opacity: 0.9; }
 
-        .container { max-width: 600px; margin: -20px auto 40px auto; padding: 0 15px; }
+        .container { max-width: 600px; margin: -25px auto 40px auto; padding: 0 15px; }
         
-        /* Modern Card View */
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); margin-bottom: 20px; text-align: center; }
-        .hero-title { color: var(--lions-gold); font-size: 2.2em; margin: 10px 0; font-weight: 900; }
-        .welcome-msg { font-size: 1.1em; color: #444; margin-bottom: 20px; line-height: 1.5; }
+        .card { background: white; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 25px; text-align: center; }
+        .hero-title { color: var(--lions-gold); font-size: 2.4em; margin: 10px 0; font-weight: 900; }
+        
+        .event-info { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+        .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; }
 
-        /* Information List (Table को साटो यो मोबाइलमा राम्रो देखिन्छ) */
-        .fee-list { text-align: left; margin: 20px 0; }
-        .fee-item { background: #f8f9fa; border-left: 5px solid var(--lions-blue); padding: 15px; margin-bottom: 15px; border-radius: 5px; }
-        .fee-item .role { font-weight: bold; color: var(--lions-blue); display: block; margin-bottom: 5px; font-size: 1.1em; }
-        .fee-item .amount { font-size: 1.2em; color: var(--lions-gold); font-weight: bold; }
+        /* Day/Night Details सहितको Fee List */
+        .fee-list { text-align: left; margin-top: 25px; }
+        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; line-height: 1.4; }
+        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; border: 1px solid #ffeeb2; }
+        .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; pt: 10px; margin-top: 5px; padding-top: 10px; }
 
-        .event-info { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-        .info-tag { background: #e7f3ff; padding: 10px; border-radius: 8px; font-weight: 600; color: #003366; }
-
-        /* QR Section */
-        .qr-section { text-align: center; margin-top: 30px; }
-        .qr-section h3 { color: var(--lions-blue); font-size: 1.5em; margin-bottom: 20px; border-bottom: 2px solid var(--lions-gold); display: inline-block; }
+        .qr-section { text-align: center; margin-top: 40px; }
         .qr-grid { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-        .qr-card { background: white; padding: 15px; border-radius: 15px; width: 100%; max-width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .qr-card p { margin: 0 0 10px 0; font-weight: bold; color: var(--lions-blue); }
+        .qr-card { background: white; padding: 20px; border-radius: 20px; width: 100%; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #ddd; }
+        .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
         .qr-card img { width: 100%; border-radius: 10px; }
         
-        .footer { text-align: center; padding: 30px; color: #777; font-size: 0.9em; }
+        .footer { text-align: center; padding: 40px; color: #888; font-size: 1em; }
 
-        /* Mobile specific font sizes */
         @media (max-width: 480px) {
-            .header h2 { font-size: 1.5em; }
-            .hero-title { font-size: 1.8em; }
+            .header h2 { font-size: 1.6em; }
+            .hero-title { font-size: 1.9em; }
+            .fee-item { padding: 15px; }
         }
     </style>
 </head>
@@ -61,33 +57,33 @@
 
 <div class="container">
     <div class="card">
-        <div style="font-weight: bold; color: #666;">LY 2026-2027</div>
+        <div style="font-weight: bold; color: #777; letter-spacing: 1px;">LY 2026-2027</div>
         <div class="hero-title">Cabinet Schooling</div>
         
-        <p class="welcome-msg">आदरणीय क्याबिनेट अफिसर साथीहरू, "क्याबिनेट स्कुलिङ" कार्यक्रममा यहाँहरूको गरिमामय उपस्थितिका लागि हार्दिक निमन्त्रणा गर्दछौं।</p>
-
         <div class="event-info">
             <div class="info-tag">📅 २०८३ जेठ ८, ९ र १० गते</div>
             <div class="info-tag">📍 गोदावरी फरेस्ट रिसोर्ट, ललितपुर</div>
         </div>
 
-        <h3 style="color: var(--lions-blue); text-align: left; border-bottom: 1px solid #eee; padding-bottom: 5px;">रजिष्ट्रेसन शुल्क:</h3>
+        <h3 style="color: var(--lions-blue); text-align: left; margin-bottom: 15px; font-size: 1.4em;">रजिष्ट्रेसन शुल्क र विवरण:</h3>
         
         <div class="fee-list">
             <div class="fee-item">
                 <span class="role">GAT Teams, Chief Cluster, Cluster, Zone/Region Chairperson</span>
-                <span class="amount">शुल्क: रु. २५,०००/-</span>
+                <span class="stay-detail">🌙 २ रात ३ दिन</span>
+                <span class="amount">रु. २५,०००/-</span>
             </div>
             
             <div class="fee-item">
                 <span class="role">अन्य क्याबिनेट अफिसरहरू</span>
-                <span class="amount">शुल्क: रु. १९,०००/-</span>
+                <span class="stay-detail">🌙 १ रात २ दिन</span>
+                <span class="amount">रु. १९,०००/-</span>
             </div>
         </div>
     </div>
 
     <div class="qr-section">
-        <h3>Scan to Pay & Register</h3>
+        <h3 style="color: var(--lions-blue); margin-bottom: 25px;">Scan to Pay & Register</h3>
         <div class="qr-grid">
             <div class="qr-card">
                 <p>Scan & Pay</p>
