@@ -7,36 +7,34 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; line-height: 1.6; }
         .header { background: #003366; color: white; text-align: center; padding: 20px; }
-        .hero { background: white; text-align: center; padding: 40px 20px; border-bottom: 5px solid #003366; }
-        .hero h1 { color: #e67e22; font-size: 2.5em; margin: 10px 0; }
-        .container { max-width: 800px; margin: 20px auto; background: #5f9ea0; color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { border-bottom: 2px solid #fff; padding-bottom: 10px; }
-        .details-box { background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 5px; margin: 20px 0; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; color: #333; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #f2f2f2; }
+        .header img { width: 100px; margin-bottom: 10px; }
+        .hero { background: white; text-align: center; padding: 30px 20px; border-bottom: 5px solid #003366; }
+        .hero h1 { color: #e67e22; font-size: 2.2em; margin: 10px 0; }
+        .container { max-width: 800px; margin: 20px auto; background: #76a0a1; color: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .details-box { background: rgba(255, 255, 255, 0.15); padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 5px solid #003366; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; color: #333; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; color: #003366; }
         .payment-info { background: #ffffff; color: #333; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .qr-container { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px; }
-        .qr-box { text-align: center; background: #003366; color: white; padding: 10px; border-radius: 10px; width: 45%; min-width: 250px; margin-bottom: 10px; }
-        .qr-box img { width: 100%; max-width: 200px; background: white; padding: 5px; border-radius: 5px; }
-        .footer { text-align: center; padding: 20px; font-weight: bold; }
+        .qr-container { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px; gap: 15px; }
+        .qr-box { text-align: center; background: #003366; color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 250px; }
+        .qr-box img { width: 100%; max-width: 220px; background: white; padding: 5px; border-radius: 5px; margin-top: 10px; }
+        .footer { text-align: center; padding: 20px; font-weight: bold; color: #003366; }
+        hr { width: 50%; border: 1px solid #76a0a1; margin: 10px auto; }
     </style>
 </head>
 <body>
-<div class="header">
-    <img src="Lions_Clubs_International_logo.svg.png" alt="Lions Logo" style="width: 80px;">
-    <h2>Lions International District 325 F</h2>
-</div>
 
 <div class="header">
+    <img src="Lions_Clubs_International_logo.svg.png" alt="Lions Logo">
     <h2>Lions International District 325 F</h2>
 </div>
 
 <div class="hero">
-    <hr style="width: 50%; border: 1px solid #5f9ea0;">
+    <hr>
     <h1>Cabinet Schooling</h1>
     <h3>LY 2026-2027</h3>
-    <hr style="width: 50%; border: 1px solid #5f9ea0;">
+    <hr>
 </div>
 
 <div class="container">
@@ -52,7 +50,7 @@
     <h3>रजिष्ट्रेसन शुल्क विवरण:</h3>
     <table>
         <tr>
-            <th>विवरण</th>
+            <th>पद/विवरण</th>
             <th>अवधि</th>
             <th>शुल्क (रु.)</th>
         </tr>
@@ -69,28 +67,26 @@
     </table>
 
     <div class="payment-info">
-        <h3>भुक्तानीका लागि बैंक विवरण:</h3>
+        <h3>बैंक विवरण:</h3>
         <p><strong>लक्ष्मी सनराइज बैंक लिमिटेड</strong><br>
         खाता नाम: Krishna Jyoti Shakya<br>
         खाता नम्बर: 01025001144</p>
-        <p style="font-size: 0.9em; color: #666;">* भौचरसँगै आफ्नो नाम, पद र क्लबको नाम अनिवार्य पठाउनुहोला।</p>
     </div>
 
     <div class="qr-container">
-    <div class="qr-box">
-        <p>Scan & Pay</p>
-        <img src="file_00000000e28871faa125473926f0ca..." alt="Scan & Pay">
-    </div>
-    <div class="qr-box">
-        <p>Scan & Go</p>
-        <img src="20260503_155534_0000.png" alt="Scan & Go">
+        <div class="qr-box">
+            <strong>Scan & Pay</strong>
+            <img src="file_00000000e28871faa125473926f0ca238a221f753c9e6f21226164223a22313030303134333530312e6a7067227d.jpeg" alt="Scan to Pay">
+        </div>
+        <div class="qr-box">
+            <strong>Scan & Go</strong>
+            <img src="20260503_155534_0000.png" alt="Scan to Go">
+        </div>
     </div>
 </div>
 
-
-    <div class="footer">
-        <p>धन्यवाद,<br>डिस्ट्रिक्ट ३२५ एफ, क्याबिनेट सचिवालय</p>
-    </div>
+<div class="footer">
+    <p>धन्यवाद,<br>डिस्ट्रिक्ट ३२५ एफ, क्याबिनेट सचिवालय</p>
 </div>
 
 </body>
