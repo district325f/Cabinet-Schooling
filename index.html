@@ -8,72 +8,77 @@
         :root {
             --lions-blue: #003366;
             --lions-gold: #e67e22;
-            --light-bg: #f4f7f9;
+            --light-bg: #f0f2f5;
         }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #2c3e50; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #2c3e50; line-height: 1.6; }
         
-        .header { background: var(--lions-blue); color: white; text-align: center; padding: 40px 15px; border-bottom: 6px solid var(--lions-gold); }
+        /* Header */
+        .header { background: var(--lions-blue); color: white; text-align: center; padding: 50px 15px; border-bottom: 6px solid var(--lions-gold); }
         .header img { width: 100px; height: auto; margin-bottom: 10px; }
-        .header h2 { margin: 5px 0; font-size: 2em; font-weight: bold; text-transform: uppercase; }
-        .header h3 { margin: 0; font-size: 1.5em; opacity: 0.9; }
+        .header h2 { margin: 5px 0; font-size: 2em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .header h3 { margin: 0; font-size: 1.4em; opacity: 0.9; font-weight: normal; }
 
-        .container { max-width: 600px; margin: -25px auto 40px auto; padding: 0 15px; }
+        .container { max-width: 650px; margin: -30px auto 40px auto; padding: 0 15px; }
         
-        .card { background: white; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 25px; text-align: center; }
-        .hero-title { color: var(--lions-gold); font-size: 2.4em; margin: 10px 0; font-weight: 900; }
+        /* Universal Card Style */
+        .ui-card { background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
         
-        .event-info { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
-        .info-tag { background: #eef6ff; padding: 12px; border-radius: 10px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .hero-title { color: var(--lions-gold); font-size: 2.5em; margin: 10px 0; font-weight: 900; text-align: center; }
+        
+        .event-info { display: flex; flex-direction: column; gap: 12px; margin: 25px 0; }
+        .info-tag { background: #eef6ff; padding: 15px; border-radius: 12px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); }
 
-        .hotel-photo { width: 100%; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
-        .fee-list { text-align: left; margin-top: 25px; }
-        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 10px; }
-        .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.15em; line-height: 1.4; }
-        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-        .fee-item .amount { font-size: 1.4em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 5px; padding-top: 10px; }
+        /* Fees Section */
+        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 12px; transition: transform 0.2s; }
+        .fee-item:hover { transform: scale(1.02); }
+        .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.1em; }
+        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.9em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .fee-item .amount { font-size: 1.5em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 10px; padding-top: 10px; }
 
-        .notice-box { background: #fff5f5; border: 1px dashed #f56565; color: #c53030; padding: 15px; border-radius: 10px; margin: 20px 0; font-size: 1.05em; font-weight: 600; line-height: 1.6; text-align: left; }
+        .notice-box { background: #fff5f5; border-left: 5px solid #f56565; color: #c53030; padding: 18px; border-radius: 12px; margin: 25px 0; font-size: 1em; font-weight: 600; text-align: left; }
 
-        /* WhatsApp Form Styles */
-        .reg-form { background: #e8f5e9; border-radius: 15px; padding: 20px; text-align: left; margin-top: 10px; border: 1px solid #c8e6c9; }
-        .reg-form h4 { color: #2e7d32; margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1em; }
-        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; font-weight: bold; font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
+        /* Form */
+        .reg-form { background: #f0fff4; border-radius: 20px; padding: 25px; border: 1px solid #c6f6d5; }
+        .reg-form h4 { color: #2f855a; margin: 0 0 20px 0; font-size: 1.3em; display: flex; align-items: center; gap: 10px; }
+        .form-group { margin-bottom: 18px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #4a5568; }
+        .form-group input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1em; transition: border-color 0.3s; }
+        .form-group input:focus { border-color: #48bb78; outline: none; }
+        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
 
-        /* Table Styles */
-        .data-section { margin-top: 30px; text-align: left; }
-        .data-section h3 { color: var(--lions-blue); font-size: 1.2em; margin-bottom: 10px; border-left: 5px solid var(--lions-gold); padding-left: 10px; }
-        .table-container { width: 100%; overflow-x: auto; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
-        table { width: 100%; border-collapse: collapse; min-width: 450px; }
-        th { background: var(--lions-blue); color: white; padding: 12px; text-align: left; font-size: 0.9em; }
-        td { padding: 10px 12px; border-bottom: 1px solid #eee; font-size: 0.9em; color: #444; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        .loading-text { text-align: center; padding: 20px; color: #888; font-style: italic; }
+        /* Contact Section Styles */
+        .section-divider { text-align: center; margin: 50px 0 30px; position: relative; }
+        .section-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #cbd5e0; z-index: 1; }
+        .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-        .qr-section { text-align: center; margin-top: 40px; }
-        .qr-grid { display: flex; flex-direction: column; gap: 20px; align-items: center; }
-        .qr-card { background: white; padding: 20px; border-radius: 20px; width: 100%; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #ddd; }
-        .qr-card p { margin: 0 0 15px 0; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; }
-        .qr-card img { width: 100%; border-radius: 10px; }
+        .contact-grid { display: flex; justify-content: space-between; gap: 15px; text-align: left; }
+        .contact-box { width: 50%; }
+        .contact-box.right { text-align: right; }
+        .contact-box .role-label { color: #718096; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
+        .contact-box .name { color: #2d3748; font-size: 1.1em; font-weight: 800; display: block; margin: 4px 0; }
+        .contact-box a { color: var(--lions-gold); text-decoration: none; font-weight: bold; font-size: 1.1em; }
 
-        .contact-section { margin-top: 40px; background: #fff; padding: 25px 20px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .contact-title { text-align: center; font-weight: bold; color: var(--lions-blue); font-size: 1.2em; margin-bottom: 25px; text-decoration: underline; }
-        .contact-row { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; }
-        .contact-person { width: 45%; }
-        .contact-person.right { text-align: right; }
-        .contact-person .role-title { color: #666; font-size: 0.9em; font-weight: 600; display: block; margin-bottom: 2px; }
-        .contact-person .name { color: #333; font-size: 1.1em; font-weight: 800; display: block; }
-        .contact-person a { color: var(--lions-gold); text-decoration: none; font-weight: bold; }
+        /* Table Card Designs */
+        .table-card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 6px solid var(--lions-gold); }
+        .table-card h3 { color: var(--lions-blue); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.3em; }
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; }
+        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        th { background: #edf2f7; color: #4a5568; padding: 15px; text-align: left; font-size: 0.9em; border-bottom: 2px solid #e2e8f0; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f4f8; font-size: 0.95em; color: #444; }
+        tr:hover { background-color: #f7fafc; }
 
-        .designer-info { margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 0.95em; }
+        .designer-info { margin-top: 50px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 30px; color: #a0aec0; font-size: 0.9em; }
+        .designer-info strong { color: #718096; }
 
         @media (max-width: 480px) {
             .header h2 { font-size: 1.6em; }
-            .hero-title { font-size: 1.9em; }
+            .hero-title { font-size: 2em; }
+            .contact-grid { flex-direction: column; text-align: center; gap: 20px; }
+            .contact-box { width: 100%; }
+            .contact-box.right { text-align: center; }
         }
     </style>
 </head>
@@ -86,8 +91,8 @@
 </div>
 
 <div class="container">
-    <div class="card">
-        <div style="font-weight: bold; color: #777; letter-spacing: 1px;">LY 2026-2027</div>
+    <div class="ui-card">
+        <div style="font-weight: bold; color: #a0aec0; letter-spacing: 1px; text-align: center;">LY 2026-2027</div>
         <div class="hero-title">Cabinet Schooling</div>
         
         <div class="event-info">
@@ -102,28 +107,25 @@
             <img src="Godavari Hotel.jpeg" alt="Godavari Hotel" class="hotel-photo">
         </div>
 
-        <h3 style="color: var(--lions-blue); text-align: left; margin-bottom: 15px;">रजिष्ट्रेसन शुल्क र विवरण:</h3>
+        <h3 style="color: var(--lions-blue); border-left: 5px solid var(--lions-gold); padding-left: 10px; margin: 30px 0 20px;">रजिष्ट्रेसन विवरण</h3>
         
-        <div class="fee-list">
-            <div class="fee-item">
-                <span class="role">GAT Teams, Chief Cluster, Cluster, Zone/Region Chairperson को लागी</span>
-                <span class="stay-detail">🌙 २ रात ३ दिन</span>
-                <span class="amount">रु. २५,०००/-</span>
-            </div>
-            <div class="fee-item">
-                <span class="role">अन्य क्याबिनेट अफिसरहरूको लागी</span>
-                <span class="stay-detail">🌙 १ रात २ दिन</span>
-                <span class="amount">रु. १९,०००/-</span>
-            </div>
+        <div class="fee-item">
+            <span class="role">GAT Teams, Chief Cluster, Cluster, Zone/Region Chairperson को लागी</span>
+            <span class="stay-detail">🌙 २ रात ३ दिन</span>
+            <span class="amount">रु. २५,०००/-</span>
+        </div>
+        <div class="fee-item">
+            <span class="role">अन्य क्याबिनेट अफिसरहरूको लागी</span>
+            <span class="stay-detail">🌙 १ रात २ दिन</span>
+            <span class="amount">रु. १९,०००/-</span>
         </div>
 
         <div class="notice-box">
-            📢 भुक्तानी विवरण पठाउने तरिका:
-कृपया तल विवरणहरू भरी बटन थिच्नुहोस्, त्यसपछि WhatsApp म्यासेजसँगै बैंक भौचरको फोटो पठाउनुहोला । धन्यवाद !
+            📢 विवरणहरू भरी बटन थिच्नुहोस्, त्यसपछि WhatsApp म्यासेजसँगै बैंक भौचरको फोटो पठाउनुहोला ।
         </div>
 
         <div class="reg-form">
-            <h4>📝 विवरण पठाउनुहोस्</h4>
+            <h4>📝 सहभागी दर्ता फारम</h4>
             <div class="form-group">
                 <label>सहभागीको नाम:</label>
                 <input type="text" id="userName" placeholder="पुरा नाम लेख्नुहोस्">
@@ -136,83 +138,81 @@
                 <label>क्लवको नाम:</label>
                 <input type="text" id="clubName" placeholder="तपाईको क्लवको नाम">
             </div>
-            <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">* बटन थिचेपछि WhatsApp खुल्नेछ, त्यहाँबाट बैङ्क भौचरको कपी पठाउनुहोस् ।</p>
             <button class="btn-whatsapp" onclick="sendWhatsApp()">
-                Send
+                सबमिट गरी ह्वाट्सएप पठाउनुहोस्
             </button>
         </div>
     </div>
 
-    <div class="qr-section">
-        <h3 style="color: var(--lions-blue); margin-bottom: 25px;">Scan to Pay & Register</h3>
-        <div class="qr-grid">
-            <div class="qr-card">
-                <p>Scan & Pay</p>
-                <img src="Scan & Pay.png" alt="Scan to Pay">
-            </div>
-        </div>
+    <div class="ui-card" style="text-align: center;">
+        <h3 style="color: var(--lions-blue); margin-bottom: 20px;">Scan to Pay</h3>
+        <img src="Scan & Pay.png" alt="Scan to Pay" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #eee;">
     </div>
 
-    <div class="contact-section">
-        <div class="contact-title">For more Details</div>
-        <div class="contact-row">
-            <div class="contact-person">
-                <span class="role-title">Cabinet Secretary</span>
+    <div class="section-divider">
+        <span class="section-label">📞 For More Details</span>
+    </div>
+
+    <div class="ui-card">
+        <div class="contact-grid">
+            <div class="contact-box">
+                <span class="role-label">Cabinet Secretary</span>
                 <span class="name">Pradumna Kumar Pokharel</span>
                 <a href="tel:9851027974">9851027974</a>
             </div>
-            <div class="contact-person right">
-                <span class="role-title">Cabinet Treasurer</span>
+            <div class="contact-box right">
+                <span class="role-label">Cabinet Treasurer</span>
                 <span class="name">Krishna Jyoti Shakya</span>
                 <a href="tel:9851030055">9851030055</a>
             </div>
         </div>
+    </div>
 
-        <div class="data-section">
-            <h3>📊 Registration Day 1</h3>
-            <div class="table-container">
-                <table id="day1Table">
-                    <thead>
-                        <tr>
-                            <th>S.N.</th>
-                            <th>Name</th>
-                            <th>Designation</th>
-                            <th>Club Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td colspan="4" class="loading-text">डाटा लोड हुँदैछ...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>📊 Registration Day 2</h3>
-            <div class="table-container">
-                <table id="day2Table">
-                    <thead>
-                        <tr>
-                            <th>S.N.</th>
-                            <th>Name</th>
-                            <th>Designation</th>
-                            <th>Club Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td colspan="4" class="loading-text">डाटा लोड हुँदैछ...</td></tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="table-card">
+        <h3>📊 Registration Day 1</h3>
+        <div class="table-wrapper">
+            <table id="day1Table">
+                <thead>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Name</th>
+                        <th>Club Name</th>
+                        <th>Designation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr>
+                </tbody>
+            </table>
         </div>
+    </div>
 
-        <div class="designer-info">
-            Design by <strong>Nirajan Aryal</strong><br>
-            <a href="tel:9851113811" style="color: #888; text-decoration: none;">9851113811</a>
+    <div class="table-card">
+        <h3>📊 Registration Day 2</h3>
+        <div class="table-wrapper">
+            <table id="day2Table">
+                <thead>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Name</th>
+                        <th>Club Name</th>
+                        <th>Designation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr>
+                </tbody>
+            </table>
         </div>
+    </div>
+
+    <div class="designer-info">
+        Designed by <strong>Nirajan Aryal</strong><br>
+        <a href="tel:9851113811" style="color: #4a5568; text-decoration: none; font-weight: bold;">9851113811</a>
     </div>
 </div>
 
 <script>
-    // १. ह्वाट्सएप फङ्सन
     function sendWhatsApp() {
         var name = document.getElementById('userName').value;
         var role = document.getElementById('userRole').value; 
@@ -220,7 +220,7 @@
         var phone = "9851030055"; 
 
         if (name == "" || role == "" || club == "") {
-            alert("कृपया सबै विवरणहरू (नाम, पद र क्लव) भर्नुहोस् ।");
+            alert("कृपया सबै विवरणहरू भर्नुहोस् ।");
             return;
         }
 
@@ -234,30 +234,27 @@
         window.open("https://wa.me/977" + phone + "?text=" + message, '_blank');
     }
 
-    // २. गुगल सिट डाटा लोड गर्ने फङ्सन
-    // आफ्नो Google Apps Script Web App URL यहाँ हाल्नुहोस्
+    // Google Sheets Integration
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwV1NTGoTIAgttayAcev3UM5yqqBJfcmPGiFpS2NaBJXXu1g1HPnd6CgPVUiQ-5Tmdi/exec';
 
-    async function loadSheetData() {
+    async function loadTableData() {
         try {
             const response = await fetch(scriptURL);
             const data = await response.json();
             
-            displayData('day1Table', data.day1);
-            displayData('day2Table', data.day2);
+            updateDisplay('day1Table', data.day1);
+            updateDisplay('day2Table', data.day2);
         } catch (error) {
-            console.error('Error!', error);
-            const loaders = document.querySelectorAll('.loading-text');
-            loaders.forEach(l => l.innerText = "डाटा लोड गर्न सकिएन ।");
+            console.error('Error loading data!', error);
         }
     }
 
-    function displayData(tableId, rows) {
+    function updateDisplay(tableId, rows) {
         const tbody = document.querySelector(`#${tableId} tbody`);
         tbody.innerHTML = '';
-
+        
         if (!rows || rows.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">डाटा उपलब्ध छैन।</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">डाटा फेला परेन</td></tr>';
             return;
         }
 
@@ -265,16 +262,15 @@
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${index + 1}</td>
-                <td>${row.name}</td>
-                <td>${row.designation}</td>
+                <td style="font-weight: 600; color: #2d3748;">${row.name}</td>
                 <td>${row.club}</td>
+                <td><span style="background: #edf2f7; padding: 3px 8px; border-radius: 6px; font-size: 0.9em;">${row.designation}</span></td>
             `;
             tbody.appendChild(tr);
         });
     }
 
-    // पेज लोड भएपछि डाटा तान्ने
-    window.onload = loadSheetData;
+    window.onload = loadTableData;
 </script>
 
 </body>
