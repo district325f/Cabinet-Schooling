@@ -12,6 +12,7 @@
         }
         body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #2c3e50; line-height: 1.6; }
         
+        /* Header */
         .header { background: var(--lions-blue); color: white; text-align: center; padding: 50px 15px; border-bottom: 6px solid var(--lions-gold); }
         .header img { width: 100px; height: auto; margin-bottom: 10px; }
         .header h2 { margin: 5px 0; font-size: 2em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
@@ -19,29 +20,17 @@
 
         .container { max-width: 650px; margin: -30px auto 40px auto; padding: 0 15px; }
         
+        /* Universal Card Style */
         .ui-card { background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
+        
         .hero-title { color: var(--lions-gold); font-size: 2.5em; margin: 10px 0; font-weight: 900; text-align: center; }
         
         .event-info { display: flex; flex-direction: column; gap: 12px; margin: 25px 0; }
         .info-tag { background: #eef6ff; padding: 15px; border-radius: 12px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); }
 
-        /* Countdown */
-        .countdown-container { 
-            background: #fff8e1; 
-            border: 2px solid var(--lions-gold); 
-            border-radius: 20px; 
-            padding: 15px 10px; 
-            margin: 10px 0 20px 0; 
-            text-align: center;
-        }
-        .timer-grid { display: flex; justify-content: center; gap: 8px; }
-        .timer-box { background: var(--lions-blue); color: white; padding: 10px 5px; border-radius: 12px; flex: 1; max-width: 80px; }
-        .timer-val { font-size: 1.4em; font-weight: 900; display: block; }
-        .timer-lab { font-size: 0.65em; text-transform: uppercase; opacity: 0.8; font-weight: bold; }
-
-        /* Seat Dashboard */
-        .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 20px 0; }
+        /* --- यहाँ नयाँ Dashboard CSS थपिएको छ (तपाईँको डिजाइनसँग मिल्ने गरी) --- */
+        .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 10px 0; }
         .seat-box { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .seat-label { color: white; font-size: 0.75em; font-weight: bold; padding: 6px 2px; display: block; text-transform: uppercase; }
         .label-blue { background: #3498db; }
@@ -49,9 +38,11 @@
         .label-orange { background: #e67e22; }
         .seat-number { font-size: 1.6em; font-weight: 900; display: block; padding: 10px 0; color: #333; }
         .seat-text { font-size: 0.7em; color: #888; padding-bottom: 8px; display: block; font-weight: bold; }
+        /* ------------------------------------------------------------------- */
 
         .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
+        /* Fees Section */
         .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 12px; transition: transform 0.2s; }
         .fee-item:hover { transform: scale(1.02); }
         .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.1em; }
@@ -60,36 +51,45 @@
 
         .notice-box { background: #fff5f5; border-left: 5px solid #f56565; color: #c53030; padding: 18px; border-radius: 12px; margin: 25px 0; font-size: 1em; font-weight: 600; text-align: left; }
 
+        /* Form - Exactly your original style */
         .reg-form { background: #f0fff4; border-radius: 20px; padding: 25px; border: 1px solid #c6f6d5; }
         .reg-form h4 { color: #2f855a; margin: 0 0 20px 0; font-size: 1.3em; display: flex; align-items: center; gap: 10px; }
         .form-group { margin-bottom: 18px; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #4a5568; }
-        .form-group input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; }
-        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
+        .form-group input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1em; transition: border-color 0.3s; box-sizing: border-box; }
+        .form-group input:focus { border-color: #48bb78; outline: none; }
+        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
 
+        /* Contact Section - Exactly your original style */
         .section-divider { text-align: center; margin: 50px 0 30px; position: relative; }
         .section-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #cbd5e0; z-index: 1; }
-        .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; }
+        .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-        .contact-grid { display: flex; justify-content: space-between; gap: 15px; }
+        .contact-grid { display: flex; justify-content: space-between; gap: 15px; text-align: left; }
         .contact-box { width: 50%; }
         .contact-box.right { text-align: right; }
         .contact-box .role-label { color: #718096; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
         .contact-box .name { color: #2d3748; font-size: 1.1em; font-weight: 800; display: block; margin: 4px 0; }
         .contact-box a { color: var(--lions-gold); text-decoration: none; font-weight: bold; font-size: 1.1em; }
 
+        /* Table Card Designs */
         .table-card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 6px solid var(--lions-gold); }
-        .table-wrapper { width: 100%; overflow-x: auto; }
+        .table-card h3 { color: var(--lions-blue); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.3em; }
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; }
         table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        th { background: #edf2f7; padding: 15px; text-align: left; }
-        td { padding: 12px 15px; border-bottom: 1px solid #f0f4f8; }
+        th { background: #edf2f7; color: #4a5568; padding: 15px; text-align: left; font-size: 0.9em; border-bottom: 2px solid #e2e8f0; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f4f8; font-size: 0.95em; color: #444; }
+        tr:hover { background-color: #f7fafc; }
 
-        .designer-info { margin-top: 50px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 30px; color: #a0aec0; }
+        .designer-info { margin-top: 50px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 30px; color: #a0aec0; font-size: 0.9em; }
 
         @media (max-width: 480px) {
-            .contact-grid { flex-direction: column; text-align: center; }
+            .header h2 { font-size: 1.6em; }
+            .hero-title { font-size: 2em; }
+            .contact-grid { flex-direction: column; text-align: center; gap: 20px; }
             .contact-box { width: 100%; }
             .contact-box.right { text-align: center; }
+            .seat-dashboard { flex-wrap: wrap; } /* मोबाइलमा सिट बक्स मिलाउन */
         }
     </style>
 </head>
@@ -116,16 +116,6 @@
                 स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
             </div>
 
-            <div class="countdown-container">
-                <div style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">⏳ कार्यक्रम सुरु हुन बाँकी:</div>
-                <div class="timer-grid">
-                    <div class="timer-box"><span id="days" class="timer-val">00</span><span class="timer-lab">Days</span></div>
-                    <div class="timer-box"><span id="hours" class="timer-val">00</span><span class="timer-lab">Hrs</span></div>
-                    <div class="timer-box"><span id="minutes" class="timer-val">00</span><span class="timer-lab">Min</span></div>
-                    <div class="timer-box"><span id="seconds" class="timer-val">00</span><span class="timer-lab">Sec</span></div>
-                </div>
-            </div>
-
             <h4 style="text-align: left; color: var(--lions-blue); margin: 15px 0 5px 0; font-weight: 800; font-size: 1.1em;">
                 📅 दोस्रो दिनको लागि (Day 2)
             </h4>
@@ -147,7 +137,7 @@
                 </div>
             </div>
 
-            <img src="Godavari Hotel.jpeg" alt="Godavari Hotel" class="hotel-photo">
+       <img src="Godavari Hotel.jpeg" alt="Godavari Hotel" class="hotel-photo">
         </div>
 
         <h3 style="color: var(--lions-blue); border-left: 5px solid var(--lions-gold); padding-left: 10px; margin: 30px 0 20px;">रजिष्ट्रेसन विवरण</h3>
@@ -170,9 +160,17 @@
 
         <div class="reg-form">
             <h4>📝 सहभागी दर्ता फारम</h4>
-            <div class="form-group"><label>सहभागीको नाम:</label><input type="text" id="userName" placeholder="पुरा नाम लेख्नुहोस्"></div>
-            <div class="form-group"><label>पद (Designation):</label><input type="text" id="userRole" placeholder="तपाईँको पद लेख्नुहोस्"></div>
-            <div class="form-group"><label>क्लवको नाम:</label><input type="text" id="clubName" placeholder="तपाईको क्लवको नाम"></div>
+            <div class="form-group">
+                <label>सहभागीको नाम:</label>
+                <input type="text" id="userName" placeholder="पुरा नाम लेख्नुहोस्">
+            </div>
+            <div class="form-group">
+                <label>पद (Designation):</label>
+                <input type="text" id="userRole" placeholder="तपाईँको पद लेख्नुहोस्">
+            </div>
+            <div class="form-group">
+                <label>क्लवको नाम:</label>
+                <input type="text" id="clubName" placeholder="तपाईको क्लवको नाम">
             </div>
             <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">* बटन थिचेपछि WhatsApp खुल्नेछ, त्यहाँबाट बैङ्क भौचरको कपी पठाउनुहोस् ।</p>
             <button class="btn-whatsapp" onclick="sendWhatsApp()">
@@ -186,7 +184,10 @@
         <img src="Scan & Pay.png" alt="Scan to Pay" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #eee;">
     </div>
 
-    <div class="section-divider"><span class="section-label">📞 For more detail's</span></div>
+    <div class="section-divider">
+        <span class="section-label">📞 For more detail's</span>
+    </div>
+
     <div class="ui-card">
         <div class="contact-grid">
             <div class="contact-box">
@@ -202,71 +203,87 @@
         </div>
     </div>
 
-    <div class="table-card"><h3>💵 Paid List for Day 1</h3><div class="table-wrapper"><table id="day1Table"><thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead><tbody></tbody></table></div></div>
-    <div class="table-card"><h3>💵 Paid List for Day 2</h3><div class="table-wrapper"><table id="day2Table"><thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead><tbody></tbody></table></div></div>
+    <div class="table-card">
+        <h3>💵 Paid List for Day 1</h3>
+        <div class="table-wrapper">
+            <table id="day1Table">
+                <thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead>
+                <tbody><tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="table-card">
+        <h3>💵 Paid List for Day 2</h3>
+        <div class="table-wrapper">
+            <table id="day2Table">
+                <thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead>
+                <tbody><tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr></tbody>
+            </table>
+        </div>
+    </div>
 
     <div class="designer-info">
-        Designed by <a href="https://www.facebook.com/nirajan.aryal.92" target="_blank" style="text-decoration:none; color:#718096; font-weight:bold;">Nirajan Aryal</a><br>
-        <a href="tel:9851113811" style="color: #4a5568; text-decoration: none; font-weight: bold;">9851113811</a>
-    </div>
+    Designed by 
+    <a href="https://www.facebook.com/nirajan.aryal.92" target="_blank" style="text-decoration: none; color: #718096; font-weight: bold; border-bottom: 1px dashed #cbd5e0;">
+        <strong>Nirajan Aryal</strong>
+    </a>
+    <br>
+    <a href="tel:9851113811" style="color: #4a5568; text-decoration: none; font-weight: bold;">9851113811</a>
+</div>
 </div>
 
 <script>
-    function updateCountdown() {
-        const eventDate = new Date("May 21, 2026 08:00:00").getTime();
-        const now = new Date().getTime();
-        const diff = eventDate - now;
-
-        if (diff > 0) {
-            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
-        }
-    }
-    setInterval(updateCountdown, 1000);
-
     function sendWhatsApp() {
         var name = document.getElementById('userName').value;
         var role = document.getElementById('userRole').value; 
         var club = document.getElementById('clubName').value;
-        if (!name || !role || !club) { alert("विवरण भर्नुहोस्।"); return; }
-        
-        var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0aक्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a*नाम:* " + name + "%0a*पद:* " + role + "%0a*क्लव:* " + club + "%0a%0aमैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु ।";
+        if (name == "" || role == "" || club == "") { alert("कृपया सबै विवरणहरू भर्नुहोस् ।"); return; }
+        var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0a" + "क्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a" + "*नाम:* " + name + "%0a" + "*पद:* " + role + "%0a" + "*क्लव:* " + club + "%0a%0a" + "मैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु ।";
         window.open("https://wa.me/9779851030055?text=" + message, '_blank');
     }
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwV1NTGoTIAgttayAcev3UM5yqqBJfcmPGiFpS2NaBJXXu1g1HPnd6CgPVUiQ-5Tmdi/exec';
 
-    async function loadData() {
-        updateCountdown();
+    // Dashboard र Tables अपडेट गर्ने फङ्सन
+    function updateUI(data) {
+        if (!data) return;
+        updateDisplay('day1Table', data.day1);
+        updateDisplay('day2Table', data.day2);
+        const registered = data.day2 ? data.day2.length : 0;
+        document.getElementById('registeredCount').innerText = registered;
+        document.getElementById('remainingCount').innerText = Math.max(0, 40 - registered);
+    }
+
+    async function loadTableData() {
+        // Local Storage बाट डाटा तुरुन्तै देखाउने (DESIGN fast बनाउन)
+        const cachedData = localStorage.getItem('cabinetData');
+        if (cachedData) { updateUI(JSON.parse(cachedData)); }
+
         try {
-            const resp = await fetch(scriptURL);
-            const data = await resp.json();
-            updateDisplay('day1Table', data.day1);
-            updateDisplay('day2Table', data.day2);
-            
-            const registered = data.day2 ? data.day2.length : 0;
-            document.getElementById('registeredCount').innerText = registered;
-            document.getElementById('remainingCount').innerText = Math.max(0, 40 - registered);
-        } catch (e) { console.error(e); }
+            const response = await fetch(scriptURL);
+            const data = await response.json();
+            localStorage.setItem('cabinetData', JSON.stringify(data));
+            updateUI(data);
+        } catch (error) { console.error('Error!', error); }
     }
 
     function updateDisplay(tableId, rows) {
         const tbody = document.querySelector(`#${tableId} tbody`);
         tbody.innerHTML = '';
         if (!rows || rows.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">डाटा फेला परेन</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">डाटा फेला परेन</td></tr>';
             return;
         }
-        rows.forEach((r, i) => {
+        rows.forEach((row, index) => {
             const tr = document.createElement('tr');
-            tr.innerHTML = `<td>${i+1}</td><td>${r.name}</td><td>${r.club}</td><td>${r.designation}</td>`;
+            tr.innerHTML = `<td>${index + 1}</td><td style="font-weight: 600; color: #2d3748;">${row.name}</td><td>${row.club}</td><td><span style="background: #edf2f7; padding: 3px 8px; border-radius: 6px; font-size: 0.9em;">${row.designation}</span></td>`;
             tbody.appendChild(tr);
         });
     }
 
-    window.onload = loadData;
+    window.onload = loadTableData;
 </script>
+
 </body>
 </html>
