@@ -40,6 +40,13 @@
         .seat-text { font-size: 0.7em; color: #888; padding-bottom: 8px; display: block; font-weight: bold; }
         /* ------------------------------------------------------------------- */
 
+        /* Countdown Timer Style */
+        .countdown-container { background: #fff8e1; border: 2px solid var(--lions-gold); border-radius: 20px; padding: 15px; margin-bottom: 20px; text-align: center; }
+        .timer-grid { display: flex; justify-content: center; gap: 10px; }
+        .timer-box { background: var(--lions-blue); color: white; padding: 8px; border-radius: 10px; min-width: 55px; }
+        .timer-val { font-size: 1.4em; font-weight: 900; display: block; }
+        .timer-lab { font-size: 0.65em; text-transform: uppercase; opacity: 0.8; font-weight: bold; }
+
         .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
         /* Fees Section */
@@ -89,7 +96,7 @@
             .contact-grid { flex-direction: column; text-align: center; gap: 20px; }
             .contact-box { width: 100%; }
             .contact-box.right { text-align: center; }
-            .seat-dashboard { flex-wrap: wrap; } /* मोबाइलमा सिट बक्स मिलाउन */
+            .seat-dashboard { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -114,6 +121,16 @@
             <div class="info-tag">
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+            </div>
+
+            <div class="countdown-container">
+                <div style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">⏳ कार्यक्रम सुरु हुन बाँकी:</div>
+                <div class="timer-grid">
+                    <div class="timer-box"><span id="days" class="timer-val">00</span><span class="timer-lab">Days</span></div>
+                    <div class="timer-box"><span id="hours" class="timer-val">00</span><span class="timer-lab">Hrs</span></div>
+                    <div class="timer-box"><span id="minutes" class="timer-val">00</span><span class="timer-lab">Min</span></div>
+                    <div class="timer-box"><span id="seconds" class="timer-val">00</span><span class="timer-lab">Sec</span></div>
+                </div>
             </div>
 
             <h4 style="text-align: left; color: var(--lions-blue); margin: 15px 0 5px 0; font-weight: 800; font-size: 1.1em;">
@@ -234,6 +251,28 @@
 </div>
 
 <script>
+    // Countdown Timer Function
+    function updateCountdown() {
+        const eventDate = new Date("May 21, 2026 08:00:00").getTime();
+        const now = new Date().getTime();
+        const diff = eventDate - now;
+
+        if (diff > 0) {
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = d.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = h.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = m.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = s.toString().padStart(2, '0');
+        } else {
+            document.querySelector(".countdown-container").innerHTML = "<div style='color:green; font-weight:bold;'>Event is Live!</div>";
+        }
+    }
+    setInterval(updateCountdown, 1000);
+
     function sendWhatsApp() {
         var name = document.getElementById('userName').value;
         var role = document.getElementById('userRole').value; 
@@ -245,7 +284,6 @@
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwV1NTGoTIAgttayAcev3UM5yqqBJfcmPGiFpS2NaBJXXu1g1HPnd6CgPVUiQ-5Tmdi/exec';
 
-    // Dashboard र Tables अपडेट गर्ने फङ्सन
     function updateUI(data) {
         if (!data) return;
         updateDisplay('day1Table', data.day1);
@@ -256,10 +294,9 @@
     }
 
     async function loadTableData() {
-        // Local Storage बाट डाटा तुरुन्तै देखाउने (DESIGN fast बनाउन)
+        updateCountdown();
         const cachedData = localStorage.getItem('cabinetData');
         if (cachedData) { updateUI(JSON.parse(cachedData)); }
-
         try {
             const response = await fetch(scriptURL);
             const data = await response.json();
