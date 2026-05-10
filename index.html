@@ -29,6 +29,16 @@
         .info-tag { background: #eef6ff; padding: 15px; border-radius: 12px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); }
 
+        /* Seat Tracker Dashboard */
+        .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 20px 0; }
+        .seat-box { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .seat-label { color: white; font-size: 0.75em; font-weight: bold; padding: 6px 2px; display: block; text-transform: uppercase; }
+        .label-blue { background: #3498db; }
+        .label-green { background: #2ecc71; }
+        .label-orange { background: #e67e22; }
+        .seat-number { font-size: 1.6em; font-weight: 900; display: block; padding: 10px 0; color: #333; }
+        .seat-text { font-size: 0.7em; color: #888; padding-bottom: 8px; display: block; font-weight: bold; }
+
         .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
         /* Fees Section */
@@ -49,7 +59,7 @@
         .form-group input:focus { border-color: #48bb78; outline: none; }
         .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
 
-        /* Contact Section Styles */
+        /* Contact Section */
         .section-divider { text-align: center; margin: 50px 0 30px; position: relative; }
         .section-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #cbd5e0; z-index: 1; }
         .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
@@ -79,6 +89,7 @@
             .contact-grid { flex-direction: column; text-align: center; gap: 20px; }
             .contact-box { width: 100%; }
             .contact-box.right { text-align: center; }
+            .seat-number { font-size: 1.3em; }
         }
     </style>
 </head>
@@ -100,6 +111,25 @@
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
                 मिति: २०८३ जेठ ८, ९ र १० गते
             </div>
+            
+            <div class="seat-dashboard">
+                <div class="seat-box">
+                    <span class="seat-label label-blue">सीमित सिट</span>
+                    <span class="seat-number">40</span>
+                    <span class="seat-text">कुल कोटा</span>
+                </div>
+                <div class="seat-box">
+                    <span class="seat-label label-green">दर्ता भएको</span>
+                    <span id="registeredCount" class="seat-number">0</span>
+                    <span class="seat-text">सहभागी संख्या</span>
+                </div>
+                <div class="seat-box">
+                    <span class="seat-label label-orange">बाँकी सिट</span>
+                    <span id="remainingCount" class="seat-number">40</span>
+                    <span class="seat-text">तुरुन्त भर्नुहोस्</span>
+                </div>
+            </div>
+
             <div class="info-tag">
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
@@ -236,7 +266,6 @@
         window.open("https://wa.me/977" + phone + "?text=" + message, '_blank');
     }
 
-    // Google Sheets Integration
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwV1NTGoTIAgttayAcev3UM5yqqBJfcmPGiFpS2NaBJXXu1g1HPnd6CgPVUiQ-5Tmdi/exec';
 
     async function loadTableData() {
@@ -246,6 +275,14 @@
             
             updateDisplay('day1Table', data.day1);
             updateDisplay('day2Table', data.day2);
+
+            // Seat Counter Logic (Day 2 को डाटा अनुसार)
+            const registered = data.day2 ? data.day2.length : 0;
+            const remaining = 40 - registered;
+
+            document.getElementById('registeredCount').innerText = registered;
+            document.getElementById('remainingCount').innerText = remaining > 0 ? remaining : 0;
+
         } catch (error) {
             console.error('Error loading data!', error);
         }
