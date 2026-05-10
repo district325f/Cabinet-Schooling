@@ -124,9 +124,9 @@
                 स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
             </div>
 
-            <div class="countdown-container">
-                <div style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">✍🏻 Registration गर्न बाँकी दिन:</div>
-                <div class="timer-grid">
+            <div id="countdownArea" class="countdown-container">
+                <div id="timerLabel" style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">✍🏻 Registration गर्न बाँकी दिन:</div>
+                <div id="timerGrid" class="timer-grid">
                     <div class="timer-box"><span id="days" class="timer-val">00</span><span class="timer-lab">Days</span></div>
                     <div class="timer-box"><span id="hours" class="timer-val">00</span><span class="timer-lab">Hrs</span></div>
                     <div class="timer-box"><span id="minutes" class="timer-val">00</span><span class="timer-lab">Min</span></div>
@@ -240,15 +240,20 @@
 <script>
     // Countdown Timer logic
     function updateCountdown() {
-        const eventDate = new Date("May 19, 2026 24:00:00").getTime();
+        const eventDate = new Date("May 19, 2026 23:59:59").getTime();
         const now = new Date().getTime();
         const diff = eventDate - now;
+
+        const countdownArea = document.getElementById("countdownArea");
 
         if (diff > 0) {
             document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
             document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
             document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        } else {
+            // समय समाप्त भएपछि सन्देश दिने र बाकसहरू हटाउने
+            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो ! 🚨</div>";
         }
     }
     setInterval(updateCountdown, 1000);
@@ -274,7 +279,7 @@
     }
 
     async function loadTableData() {
-        updateCountdown(); // सुरुमै काउन्टडाउन चलाउने
+        updateCountdown(); 
         const cachedData = localStorage.getItem('cabinetData');
         if (cachedData) { updateUI(JSON.parse(cachedData)); }
         try {
@@ -301,6 +306,5 @@
 
     window.onload = loadTableData;
 </script>
-
 </body>
 </html>
