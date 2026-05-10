@@ -30,7 +30,7 @@
         .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); }
 
         /* Seat Tracker Dashboard */
-        .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 20px 0; }
+        .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 10px 0; }
         .seat-box { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .seat-label { color: white; font-size: 0.75em; font-weight: bold; padding: 6px 2px; display: block; text-transform: uppercase; }
         .label-blue { background: #3498db; }
@@ -42,51 +42,37 @@
         .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
         /* Fees Section */
-        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 12px; transition: transform 0.2s; }
-        .fee-item:hover { transform: scale(1.02); }
+        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 12px; }
         .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.1em; }
         .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.9em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
         .fee-item .amount { font-size: 1.5em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 10px; padding-top: 10px; }
 
-        .notice-box { background: #fff5f5; border-left: 5px solid #f56565; color: #c53030; padding: 18px; border-radius: 12px; margin: 25px 0; font-size: 1em; font-weight: 600; text-align: left; }
+        .notice-box { background: #fff5f5; border-left: 5px solid #f56565; color: #c53030; padding: 18px; border-radius: 12px; margin: 25px 0; font-size: 1em; font-weight: 600; }
 
         /* Form */
         .reg-form { background: #f0fff4; border-radius: 20px; padding: 25px; border: 1px solid #c6f6d5; }
-        .reg-form h4 { color: #2f855a; margin: 0 0 20px 0; font-size: 1.3em; display: flex; align-items: center; gap: 10px; }
-        .form-group { margin-bottom: 18px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #4a5568; }
-        .form-group input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1em; transition: border-color 0.3s; }
-        .form-group input:focus { border-color: #48bb78; outline: none; }
-        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; }
 
         /* Contact Section */
         .section-divider { text-align: center; margin: 50px 0 30px; position: relative; }
-        .section-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #cbd5e0; z-index: 1; }
-        .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-
-        .contact-grid { display: flex; justify-content: space-between; gap: 15px; text-align: left; }
+        .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; }
+        .contact-grid { display: flex; justify-content: space-between; gap: 15px; }
         .contact-box { width: 50%; }
         .contact-box.right { text-align: right; }
-        .contact-box .role-label { color: #718096; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
-        .contact-box .name { color: #2d3748; font-size: 1.1em; font-weight: 800; display: block; margin: 4px 0; }
-        .contact-box a { color: var(--lions-gold); text-decoration: none; font-weight: bold; font-size: 1.1em; }
 
-        /* Table Card Designs */
+        /* Tables */
         .table-card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 6px solid var(--lions-gold); }
-        .table-card h3 { color: var(--lions-blue); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.3em; }
         .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; }
         table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        th { background: #edf2f7; color: #4a5568; padding: 15px; text-align: left; font-size: 0.9em; border-bottom: 2px solid #e2e8f0; }
-        td { padding: 12px 15px; border-bottom: 1px solid #f0f4f8; font-size: 0.95em; color: #444; }
-        tr:hover { background-color: #f7fafc; }
+        th { background: #edf2f7; color: #4a5568; padding: 15px; text-align: left; font-size: 0.9em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f4f8; font-size: 0.95em; }
 
         .designer-info { margin-top: 50px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 30px; color: #a0aec0; font-size: 0.9em; }
-        .designer-info strong { color: #718096; }
 
         @media (max-width: 480px) {
             .header h2 { font-size: 1.6em; }
             .hero-title { font-size: 2em; }
-            .contact-grid { flex-direction: column; text-align: center; gap: 20px; }
+            .contact-grid { flex-direction: column; text-align: center; }
             .contact-box { width: 100%; }
             .contact-box.right { text-align: center; }
             .seat-number { font-size: 1.3em; }
@@ -112,6 +98,11 @@
                 मिति: २०८३ जेठ ८, ९ र १० गते
             </div>
             
+            <div class="info-tag">
+                <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
+            </div>
+
             <div class="seat-dashboard">
                 <div class="seat-box">
                     <span class="seat-label label-blue">सीमित सिट</span>
@@ -130,10 +121,6 @@
                 </div>
             </div>
 
-            <div class="info-tag">
-                <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
-            </div>
             <img src="Godavari Hotel.jpeg" alt="Godavari Hotel" class="hotel-photo">
         </div>
 
@@ -169,7 +156,6 @@
                 <label>क्लवको नाम:</label>
                 <input type="text" id="clubName" placeholder="तपाईको क्लवको नाम">
             </div>
-            <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">* बटन थिचेपछि WhatsApp खुल्नेछ, त्यहाँबाट बैङ्क भौचरको कपी पठाउनुहोस् ।</p>
             <button class="btn-whatsapp" onclick="sendWhatsApp()">
                 Send
             </button>
@@ -204,17 +190,8 @@
         <h3>📊 Paid List for Day 1</h3>
         <div class="table-wrapper">
             <table id="day1Table">
-                <thead>
-                    <tr>
-                        <th>S.N.</th>
-                        <th>Name</th>
-                        <th>Club Name</th>
-                        <th>Designation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr>
-                </tbody>
+                <thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead>
+                <tbody><tr><td colspan="4" style="text-align:center; padding: 30px;">लोड हुँदैछ...</td></tr></tbody>
             </table>
         </div>
     </div>
@@ -223,25 +200,13 @@
         <h3>📊 Paid List for Day 2</h3>
         <div class="table-wrapper">
             <table id="day2Table">
-                <thead>
-                    <tr>
-                        <th>S.N.</th>
-                        <th>Name</th>
-                        <th>Club Name</th>
-                        <th>Designation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr>
-                </tbody>
+                <thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead>
+                <tbody><tr><td colspan="4" style="text-align:center; padding: 30px;">लोड हुँदैछ...</td></tr></tbody>
             </table>
         </div>
     </div>
 
-    <div class="designer-info">
-        Designed by <strong>Nirajan Aryal</strong><br>
-        <a href="tel:9851113811" style="color: #4a5568; text-decoration: none; font-weight: bold;">9851113811</a>
-    </div>
+    <div class="designer-info">Designed by <strong>Nirajan Aryal</strong> | 9851113811</div>
 </div>
 
 <script>
@@ -249,21 +214,9 @@
         var name = document.getElementById('userName').value;
         var role = document.getElementById('userRole').value; 
         var club = document.getElementById('clubName').value;
-        var phone = "9851030055"; 
-
-        if (name == "" || role == "" || club == "") {
-            alert("कृपया सबै विवरणहरू भर्नुहोस् ।");
-            return;
-        }
-
-        var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0a" + 
-                      "क्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a" +
-                      "*नाम:* " + name + "%0a" +
-                      "*पद:* " + role + "%0a" + 
-                      "*क्लव:* " + club + "%0a%0a" +
-                      "मैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु ।";
-
-        window.open("https://wa.me/977" + phone + "?text=" + message, '_blank');
+        if (name == "" || role == "" || club == "") { alert("कृपया सबै विवरणहरू भर्नुहोस् ।"); return; }
+        var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0a" + "क्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a" + "*नाम:* " + name + "%0a" + "*पद:* " + role + "%0a" + "*क्लव:* " + club;
+        window.open("https://wa.me/9779851030055?text=" + message, '_blank');
     }
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwV1NTGoTIAgttayAcev3UM5yqqBJfcmPGiFpS2NaBJXXu1g1HPnd6CgPVUiQ-5Tmdi/exec';
@@ -272,45 +225,27 @@
         try {
             const response = await fetch(scriptURL);
             const data = await response.json();
-            
             updateDisplay('day1Table', data.day1);
             updateDisplay('day2Table', data.day2);
 
-            // Seat Counter Logic (Day 2 को डाटा अनुसार)
+            // Seat Logic
             const registered = data.day2 ? data.day2.length : 0;
-            const remaining = 40 - registered;
-
             document.getElementById('registeredCount').innerText = registered;
-            document.getElementById('remainingCount').innerText = remaining > 0 ? remaining : 0;
-
-        } catch (error) {
-            console.error('Error loading data!', error);
-        }
+            document.getElementById('remainingCount').innerText = Math.max(0, 40 - registered);
+        } catch (error) { console.error('Error!', error); }
     }
 
     function updateDisplay(tableId, rows) {
         const tbody = document.querySelector(`#${tableId} tbody`);
         tbody.innerHTML = '';
-        
-        if (!rows || rows.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">डाटा फेला परेन</td></tr>';
-            return;
-        }
-
+        if (!rows || rows.length === 0) { tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">डाटा फेला परेन</td></tr>'; return; }
         rows.forEach((row, index) => {
             const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${index + 1}</td>
-                <td style="font-weight: 600; color: #2d3748;">${row.name}</td>
-                <td>${row.club}</td>
-                <td><span style="background: #edf2f7; padding: 3px 8px; border-radius: 6px; font-size: 0.9em;">${row.designation}</span></td>
-            `;
+            tr.innerHTML = `<td>${index + 1}</td><td style="font-weight:600;">${row.name}</td><td>${row.club}</td><td><span style="background:#edf2f7; padding:3px 8px; border-radius:6px; font-size:0.9em;">${row.designation}</span></td>`;
             tbody.appendChild(tr);
         });
     }
-
     window.onload = loadTableData;
 </script>
-
 </body>
 </html>
