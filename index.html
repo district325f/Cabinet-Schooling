@@ -12,7 +12,6 @@
         }
         body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #2c3e50; line-height: 1.6; }
         
-        /* Header */
         .header { background: var(--lions-blue); color: white; text-align: center; padding: 50px 15px; border-bottom: 6px solid var(--lions-gold); }
         .header img { width: 100px; height: auto; margin-bottom: 10px; }
         .header h2 { margin: 5px 0; font-size: 2em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
@@ -20,7 +19,6 @@
 
         .container { max-width: 650px; margin: -30px auto 40px auto; padding: 0 15px; }
         
-        /* Universal Card Style */
         .ui-card { background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
         .hero-title { color: var(--lions-gold); font-size: 2.5em; margin: 10px 0; font-weight: 900; text-align: center; }
         
@@ -28,7 +26,6 @@
         .info-tag { background: #eef6ff; padding: 15px; border-radius: 12px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); }
 
-        /* Countdown Style - Final Fixed Version */
         .countdown-container { 
             background: #fff8e1; 
             border: 2px solid var(--lions-gold); 
@@ -39,24 +36,11 @@
             box-sizing: border-box;
             width: 100%;
         }
-        .timer-grid { 
-            display: flex; 
-            justify-content: center; 
-            gap: 8px; 
-            width: 100%;
-        }
-        .timer-box { 
-            background: var(--lions-blue); 
-            color: white; 
-            padding: 10px 5px; 
-            border-radius: 12px; 
-            flex: 1;
-            max-width: 80px;
-        }
+        .timer-grid { display: flex; justify-content: center; gap: 8px; width: 100%; }
+        .timer-box { background: var(--lions-blue); color: white; padding: 10px 5px; border-radius: 12px; flex: 1; max-width: 80px; }
         .timer-val { font-size: 1.4em; font-weight: 900; display: block; }
         .timer-lab { font-size: 0.65em; text-transform: uppercase; opacity: 0.8; font-weight: bold; }
 
-        /* Seat Dashboard */
         .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 10px 0; }
         .seat-box { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .seat-label { color: white; font-size: 0.75em; font-weight: bold; padding: 6px 2px; display: block; text-transform: uppercase; }
@@ -68,21 +52,19 @@
 
         .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
-        /* Fees & Notice */
         .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 12px; }
         .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.1em; }
         .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.9em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
         .fee-item .amount { font-size: 1.5em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 10px; padding-top: 10px; }
+
         .notice-box { background: #fff5f5; border-left: 5px solid #f56565; color: #c53030; padding: 18px; border-radius: 12px; margin: 25px 0; font-size: 1em; font-weight: 600; text-align: left; }
 
-        /* Form */
         .reg-form { background: #f0fff4; border-radius: 20px; padding: 25px; border: 1px solid #c6f6d5; }
         .form-group { margin-bottom: 18px; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #4a5568; }
         .form-group input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; box-sizing: border-box; }
         .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; }
 
-        /* Contact Section */
         .section-divider { text-align: center; margin: 50px 0 30px; position: relative; }
         .section-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #cbd5e0; z-index: 1; }
         .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; }
@@ -92,7 +74,6 @@
         .contact-box .role-label { color: #718096; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
         .contact-box a { color: var(--lions-gold); text-decoration: none; font-weight: bold; }
 
-        /* Table Design */
         .table-card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 6px solid var(--lions-gold); }
         .table-wrapper { width: 100%; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 500px; }
@@ -129,14 +110,13 @@
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
                 मिति: २०८३ जेठ ८, ९ र १० गते
             </div>
-
             <div class="info-tag">
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
             </div>
 
             <div class="countdown-container">
-                <div style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">✍ नाम दर्ता गर्न बाँकी दिन :</div>
+                <div style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">⏳ कार्यक्रम सुरु हुन बाँकी:</div>
                 <div class="timer-grid">
                     <div class="timer-box"><span id="days" class="timer-val">00</span><span class="timer-lab">Days</span></div>
                     <div class="timer-box"><span id="hours" class="timer-val">00</span><span class="timer-lab">Hrs</span></div>
@@ -145,7 +125,7 @@
                 </div>
             </div>
 
-            <h4 style="text-align: left; color: var(--lions-blue); margin: 15px 0 5px 0; font-weight: 800; font-size: 1.1em;">📊 दोस्रो दिनको लागि (Day 2)</h4>
+            <h4 style="text-align: left; color: var(--lions-blue); margin: 15px 0 5px 0; font-weight: 800; font-size: 1.1em;">📊 सहभागिताको विवरण (Day 2)</h4>
             <div class="seat-dashboard">
                 <div class="seat-box">
                     <span class="seat-label label-blue">सीमित सिट</span>
@@ -188,6 +168,7 @@
             <div class="form-group"><label>क्लवको नाम:</label><input type="text" id="clubName" placeholder="क्लवको नाम"></div>
             <button class="btn-whatsapp" onclick="sendWhatsApp()">Send</button>
         </div>
+        <div style="text-align: center; margin-top: 15px; color: #718096; font-weight: bold;">धन्यवाद!</div>
     </div>
 
     <div class="ui-card" style="text-align: center;">
@@ -195,16 +176,16 @@
         <img src="Scan & Pay.png" alt="Scan to Pay" style="width: 100%; max-width: 300px; border-radius: 15px;">
     </div>
 
-    <div class="section-divider"><span class="section-label">📞 Contacts</span></div>
+    <div class="section-divider"><span class="section-label">📞 सम्पर्कका लागि</span></div>
     <div class="ui-card">
         <div class="contact-grid">
-            <div class="contact-box"><span class="role-label">Secretary</span><span class="name" style="display:block;">P.K. Pokharel</span><a href="tel:9851027974">9851027974</a></div>
-            <div class="contact-box right"><span class="role-label">Treasurer</span><span class="name" style="display:block;">K.J. Shakya</span><a href="tel:9851030055">9851030055</a></div>
+            <div class="contact-box"><span class="role-label">District Secretary</span><span class="name" style="display:block;">P.K. Pokharel</span><a href="tel:9851027974">9851027974</a></div>
+            <div class="contact-box right"><span class="role-label">District Treasurer</span><span class="name" style="display:block;">K.J. Shakya</span><a href="tel:9851030055">9851030055</a></div>
         </div>
     </div>
 
-    <div class="table-card"><h3>Paid List (Day 1)</h3><div class="table-wrapper"><table id="day1Table"><thead><tr><th>S.N.</th><th>Name</th><th>Club</th><th>Role</th></tr></thead><tbody></tbody></table></div></div>
-    <div class="table-card"><h3>Paid List (Day 2)</h3><div class="table-wrapper"><table id="day2Table"><thead><tr><th>S.N.</th><th>Name</th><th>Club</th><th>Role</th></tr></thead><tbody></tbody></table></div></div>
+    <div class="table-card"><h3>भुक्तानी विवरण (Paid List Day 1)</h3><div class="table-wrapper"><table id="day1Table"><thead><tr><th>S.N.</th><th>Name</th><th>Club</th><th>Position</th></tr></thead><tbody></tbody></table></div></div>
+    <div class="table-card"><h3>भुक्तानी विवरण (Paid List Day 2)</h3><div class="table-wrapper"><table id="day2Table"><thead><tr><th>S.N.</th><th>Name</th><th>Club</th><th>Position</th></tr></thead><tbody></tbody></table></div></div>
 
     <div style="text-align: center;">
         <div class="visitor-counter"><span class="visitor-label">VISITORS</span><br><span id="visitCount" class="count-digits">000000</span></div>
@@ -217,9 +198,8 @@
 </div>
 
 <script>
-    // Countdown Timer logic - Works on both Mobile and Desktop
     function updateCountdown() {
-        const eventDate = new Date("May 19, 2026 24:00:00").getTime();
+        const eventDate = new Date("May 21, 2026 08:00:00").getTime();
         const now = new Date().getTime();
         const diff = eventDate - now;
 
@@ -239,7 +219,8 @@
         var role = document.getElementById('userRole').value; 
         var club = document.getElementById('clubName').value;
         if (!name || !role || !club) { alert("विवरण भर्नुहोस्।"); return; }
-        var message = "नमस्ते, क्याबिनेट स्कुलिङ रजिष्ट्रेसन:%0a*नाम:* " + name + "%0a*पद:* " + role + "%0a*क्लव:* " + club;
+        
+        var message = "नमस्ते कृष्ण ज्योति शाक्यज्यू,%0aम " + name + ", " + role + ", " + club + " बाट क्याबिनेट स्कुलिङको लागि रजिष्ट्रेसन विवरण पठाउँदैछु। कृपया बैंक भौचरको फोटो पनि प्राप्त गर्नुहोस्।%0a%0aधन्यवाद!";
         window.open("https://wa.me/9779851030055?text=" + message, '_blank');
     }
 
