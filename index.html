@@ -306,7 +306,7 @@
     // Countdown Timer & Event Day logic
     function updateCountdown() {
         // Registration Deadline (जेठ ५ गते सम्म मानिएको)
-        const registrationDeadline = new Date("May 10, 2026 24:00:00").getTime();
+        const registrationDeadline = new Date("May 22, 2026 24:00:00").getTime();
         // Event Start Date (जेठ ८ गते)
         const eventStartDate = new Date("May 22, 2026 09:00:00").getTime();
         
@@ -322,7 +322,7 @@
             document.getElementById("minutes").innerText = Math.floor((diffReg % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             document.getElementById("seconds").innerText = Math.floor((diffReg % (1000 * 60)) / 1000).toString().padStart(2, '0');
         } else {
-            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो! 🚨</div>";
+            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो ! 🚨</div>";
         }
 
         // २. सर्कलमा दिन देखाउने लजिक (Event Start सम्मको दिन)
