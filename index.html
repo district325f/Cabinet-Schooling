@@ -238,7 +238,7 @@
         </div>
     </div>
 
-    <div class="ui-card" style="text-align: center;">
+    <div id="qrCard" class="ui-card" style="text-align: center;">
         <h3 style="color: var(--lions-blue); margin-bottom: 20px;">Scan to Pay</h3>
         <img src="Scan & Pay.png" alt="Scan to Pay" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #eee;">
     </div>
@@ -290,6 +290,9 @@
 </div>
 
 <script>
+    // Global variable to track registered count
+    var currentRegisteredCount = 0;
+
     // Scroll to Top logic
     var topBtn = document.getElementById("scrollTopBtn");
     window.onscroll = function() {
@@ -305,30 +308,35 @@
 
     // Countdown Timer & Event Day logic
     function updateCountdown() {
-        // Registration Deadline (जेठ ५ गते सम्म मानिएको)
         const registrationDeadline = new Date("May 19, 2026 24:00:00").getTime();
-        // Event Start Date (जेठ ८ गते)
         const eventStartDate = new Date("May 22, 2026 09:00:00").getTime();
-        
         const now = new Date().getTime();
         
-        // १. रजिष्ट्रेसन काउन्टडाउन लजिक
         const diffReg = registrationDeadline - now;
         const countdownArea = document.getElementById("countdownArea");
+        const qrCard = document.getElementById("qrCard");
 
-        if (diffReg > 0) {
+        // Logic 1: Handle Full Capacity (40 Seats)
+        if (currentRegisteredCount >= 40) {
+            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.2em; padding: 10px;'>🚨 निर्धारित ४० सिट संख्या पूर्ण भएकोले दर्ता प्रक्रिया बन्द गरिएको छ ! 🚨</div>";
+            if(qrCard) qrCard.style.display = "none"; // Hide QR
+        } 
+        // Logic 2: Handle Time Expiry
+        else if (diffReg <= 0) {
+            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो ! 🚨</div>";
+            if(qrCard) qrCard.style.display = "none"; // Hide QR
+        } 
+        // Logic 3: Normal Countdown
+        else {
             document.getElementById("days").innerText = Math.floor(diffReg / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
             document.getElementById("hours").innerText = Math.floor((diffReg % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
             document.getElementById("minutes").innerText = Math.floor((diffReg % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             document.getElementById("seconds").innerText = Math.floor((diffReg % (1000 * 60)) / 1000).toString().padStart(2, '0');
-        } else {
-            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो ! 🚨</div>";
         }
 
-        // २. सर्कलमा दिन देखाउने लजिक (Event Start सम्मको दिन)
+        // Days left circle logic
         const diffEvent = eventStartDate - now;
         const daysLeftDisplay = document.getElementById("daysLeftNum");
-        
         if (diffEvent > 0) {
             const daysToEvent = Math.ceil(diffEvent / (1000 * 60 * 60 * 24));
             daysLeftDisplay.innerText = daysToEvent.toString().padStart(2, '0');
@@ -340,6 +348,10 @@
     setInterval(updateCountdown, 1000);
 
     function sendWhatsApp() {
+        if (currentRegisteredCount >= 40) {
+            alert("क्षमा गर्नुहोला, ४० सिट संख्या पूर्ण भइसकेको छ। अब थप दर्ता गर्न मिल्दैन।");
+            return;
+        }
         var name = document.getElementById('userName').value;
         var role = document.getElementById('userRole').value; 
         var club = document.getElementById('clubName').value;
@@ -354,9 +366,13 @@
         if (!data) return;
         updateDisplay('day1Table', data.day1);
         updateDisplay('day2Table', data.day2);
-        const registered = data.day2 ? data.day2.length : 0;
-        document.getElementById('registeredCount').innerText = registered;
-        document.getElementById('remainingCount').innerText = Math.max(0, 40 - registered);
+        
+        currentRegisteredCount = data.day2 ? data.day2.length : 0;
+        document.getElementById('registeredCount').innerText = currentRegisteredCount;
+        document.getElementById('remainingCount').innerText = Math.max(0, 40 - currentRegisteredCount);
+        
+        // Immediate update check after fetching data
+        updateCountdown();
     }
 
     async function loadTableData() {
