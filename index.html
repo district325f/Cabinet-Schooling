@@ -330,7 +330,7 @@
         const daysLeftDisplay = document.getElementById("daysLeftNum");
         
         if (diffEvent > 0) {
-            const daysToEvent = Math.floor(diffEvent / (1000 * 60 * 60 * 24));
+            const daysToEvent = Math.ceil(diffEvent / (1000 * 60 * 60 * 24));
             daysLeftDisplay.innerText = daysToEvent.toString().padStart(2, '0');
         } else {
             daysLeftDisplay.innerText = "00";
