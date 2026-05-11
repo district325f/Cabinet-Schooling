@@ -24,6 +24,25 @@
         .ui-card { background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
         
         .hero-title { color: var(--lions-gold); font-size: 2.5em; margin: 10px 0; font-weight: 900; text-align: center; }
+
+        /* Day Circle Design - NEW */
+        .days-left-circle-container { display: flex; justify-content: center; margin: 20px 0; }
+        .days-circle {
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, var(--lions-blue) 60%, #001a33);
+            border: 5px solid var(--lions-gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
+            position: relative;
+        }
+        .days-circle .num { font-size: 3em; font-weight: 900; line-height: 1; }
+        .days-circle .text { font-size: 0.8em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: var(--lions-gold); }
         
         .event-info { display: flex; flex-direction: column; gap: 12px; margin: 25px 0; }
         .info-tag { background: #eef6ff; padding: 15px; border-radius: 12px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
@@ -42,6 +61,27 @@
         .timer-box { background: var(--lions-blue); color: white; padding: 10px 5px; border-radius: 12px; flex: 1; max-width: 80px; }
         .timer-val { font-size: 1.4em; font-weight: 900; display: block; }
         .timer-lab { font-size: 0.65em; text-transform: uppercase; opacity: 0.8; font-weight: bold; }
+
+        /* Scroll to Top Button CSS */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--lions-gold);
+            color: white;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        #scrollTopBtn:hover { background-color: var(--lions-blue); }
 
         .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 10px 0; }
         .seat-box { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
@@ -98,10 +138,15 @@
             .contact-box { width: 100%; }
             .contact-box.right { text-align: center; }
             .seat-dashboard { flex-wrap: wrap; }
+            #scrollTopBtn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 18px; }
+            .days-circle { width: 120px; height: 120px; }
+            .days-circle .num { font-size: 2.5em; }
         }
     </style>
 </head>
 <body>
+
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
 
 <div class="header">
     <img src="Lions_Clubs_International_logo.svg.png" alt="Lions Logo">
@@ -114,6 +159,13 @@
         <div style="font-weight: bold; color: #a0aec0; letter-spacing: 1px; text-align: center;">LY 2026-2027</div>
         <div class="hero-title">Cabinet Schooling</div>
         
+        <div class="days-left-circle-container">
+            <div class="days-circle">
+                <span id="daysLeftNum" class="num">00</span>
+                <span class="text">Days to Go</span>
+            </div>
+        </div>
+
         <div class="event-info">
             <div class="info-tag">
                 <svg class="plain-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
@@ -238,22 +290,51 @@
 </div>
 
 <script>
-    // Countdown Timer logic
-    function updateCountdown() {
-        const eventDate = new Date("May 19, 2026 24:00:00").getTime();
-        const now = new Date().getTime();
-        const diff = eventDate - now;
+    // Scroll to Top logic
+    var topBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    };
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
 
+    // Countdown Timer & Event Day logic
+    function updateCountdown() {
+        // Registration Deadline (जेठ ५ गते सम्म मानिएको)
+        const registrationDeadline = new Date("May 19, 2026 23:59:59").getTime();
+        // Event Start Date (जेठ ८ गते)
+        const eventStartDate = new Date("May 22, 2026 09:00:00").getTime();
+        
+        const now = new Date().getTime();
+        
+        // १. रजिष्ट्रेसन काउन्टडाउन लजिक
+        const diffReg = registrationDeadline - now;
         const countdownArea = document.getElementById("countdownArea");
 
-        if (diff > 0) {
-            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        if (diffReg > 0) {
+            document.getElementById("days").innerText = Math.floor(diffReg / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((diffReg % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((diffReg % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((diffReg % (1000 * 60)) / 1000).toString().padStart(2, '0');
         } else {
-            // समय समाप्त भएपछि सन्देश दिने र बाकसहरू हटाउने
-            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो ! 🚨</div>";
+            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.3em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो! 🚨</div>";
+        }
+
+        // २. सर्कलमा दिन देखाउने लजिक (Event Start सम्मको दिन)
+        const diffEvent = eventStartDate - now;
+        const daysLeftDisplay = document.getElementById("daysLeftNum");
+        
+        if (diffEvent > 0) {
+            const daysToEvent = Math.floor(diffEvent / (1000 * 60 * 60 * 24));
+            daysLeftDisplay.innerText = daysToEvent.toString().padStart(2, '0');
+        } else {
+            daysLeftDisplay.innerText = "00";
+            document.querySelector(".days-circle .text").innerText = "Event Started";
         }
     }
     setInterval(updateCountdown, 1000);
