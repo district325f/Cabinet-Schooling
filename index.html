@@ -3,417 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lions District 325 F - Cabinet Schooling</title>
+    <title>Club PST Training | District 325 F</title>
     <style>
         :root {
-            --lions-blue: #003366;
-            --lions-gold: #e67e22;
-            --light-bg: #f0f2f5;
+            --primary: #003366;
+            --accent: #e67e22;
+            --light-bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-dark: #333;
         }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background-color: var(--light-bg); color: #2c3e50; line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--primary); color: var(--text-dark); padding-bottom: 20px; }
         
-        /* Header */
-        .header { background: var(--lions-blue); color: white; text-align: center; padding: 50px 15px; border-bottom: 6px solid var(--lions-gold); }
-        .header img { width: 100px; height: auto; margin-bottom: 10px; }
-        .header h2 { margin: 5px 0; font-size: 2em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-        .header h3 { margin: 0; font-size: 1.4em; opacity: 0.9; font-weight: normal; }
-
-        .container { max-width: 650px; margin: -30px auto 40px auto; padding: 0 15px; }
+        .header { text-align: center; padding: 25px 15px; color: white; }
+        .header img { width: 85px; height: auto; margin-bottom: 10px; }
+        .header h1 { font-size: 22px; margin-bottom: 5px; letter-spacing: 1px; }
+        .header h2 { font-size: 15px; font-weight: normal; opacity: 0.9; }
         
-        /* Universal Card Style */
-        .ui-card { background: white; padding: 25px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
+        .container { 
+            max-width: 500px; 
+            margin: -15px auto 20px auto; 
+            background: var(--card-bg); 
+            border-radius: 20px 20px 20px 20px; 
+            padding: 20px 15px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            width: 92%; 
+        }
         
-        .hero-title { color: var(--lions-gold); font-size: 2.5em; margin: 10px 0; font-weight: 900; text-align: center; }
-
-        /* Day Circle Design - NEW */
-        .days-left-circle-container { display: flex; justify-content: center; margin: 20px 0; }
-        .days-circle {
-            width: 140px;
-            height: 140px;
-            background: radial-gradient(circle, var(--lions-blue) 60%, #001a33);
-            border: 5px solid var(--lions-gold);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
-            position: relative;
-        }
-        .days-circle .num { font-size: 3em; font-weight: 900; line-height: 1; }
-        .days-circle .text { font-size: 0.8em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: var(--lions-gold); }
+        .title { text-align: center; color: var(--accent); font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+        .info-box { background: #eef5fc; border-radius: 12px; padding: 15px; margin-bottom: 15px; border-left: 5px solid var(--primary); }
+        .info-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; }
+        .info-item:last-child { margin-bottom: 0; }
+        .info-item span { font-weight: bold; margin-right: 8px; }
         
-        .event-info { display: flex; flex-direction: column; gap: 12px; margin: 25px 0; }
-        .info-tag { background: #eef6ff; padding: 15px; border-radius: 12px; font-weight: 600; color: #004080; font-size: 1.1em; border: 1px solid #d0e3ff; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .plain-icon { width: 22px; height: 22px; fill: var(--lions-blue); }
-
-        /* Countdown CSS */
-        .countdown-container { 
-            background: #fff8e1; 
-            border: 2px solid var(--lions-gold); 
-            border-radius: 20px; 
-            padding: 15px 10px; 
-            margin: 5px 0 15px 0; 
-            text-align: center;
-        }
-        .timer-grid { display: flex; justify-content: center; gap: 8px; }
-        .timer-box { background: var(--lions-blue); color: white; padding: 10px 5px; border-radius: 12px; flex: 1; max-width: 80px; }
-        .timer-val { font-size: 1.4em; font-weight: 900; display: block; }
-        .timer-lab { font-size: 0.65em; text-transform: uppercase; opacity: 0.8; font-weight: bold; }
-
-        /* Scroll to Top Button CSS */
-        #scrollTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: var(--lions-gold);
-            color: white;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 22px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-        #scrollTopBtn:hover { background-color: var(--lions-blue); }
-
-        .seat-dashboard { display: flex; justify-content: space-between; gap: 10px; margin: 10px 0; }
-        .seat-box { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .seat-label { color: white; font-size: 0.75em; font-weight: bold; padding: 6px 2px; display: block; text-transform: uppercase; }
-        .label-blue { background: #3498db; }
-        .label-green { background: #2ecc71; }
-        .label-orange { background: #e67e22; }
-        .seat-number { font-size: 1.6em; font-weight: 900; display: block; padding: 10px 0; color: #333; }
-        .seat-text { font-size: 0.7em; color: #888; padding-bottom: 8px; display: block; font-weight: bold; }
-
-        .hotel-photo { width: 100%; border-radius: 15px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-
-        .fee-item { background: #ffffff; border: 1px solid #eee; border-left: 6px solid var(--lions-blue); padding: 20px; margin-bottom: 15px; border-radius: 12px; transition: transform 0.2s; }
-        .fee-item:hover { transform: scale(1.02); }
-        .fee-item .role { font-weight: 800; color: var(--lions-blue); display: block; margin-bottom: 8px; font-size: 1.1em; }
-        .fee-item .stay-detail { background: #fff8e1; color: #b7791f; padding: 4px 12px; border-radius: 20px; font-size: 0.9em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-        .fee-item .amount { font-size: 1.5em; color: var(--lions-gold); font-weight: 900; display: block; border-top: 1px dashed #ddd; margin-top: 10px; padding-top: 10px; }
-
-        .notice-box { background: #fff5f5; border-left: 5px solid #f56565; color: #c53030; padding: 18px; border-radius: 12px; margin: 25px 0; font-size: 1em; font-weight: 600; text-align: left; }
-
-        .reg-form { background: #f0fff4; border-radius: 20px; padding: 25px; border: 1px solid #c6f6d5; }
-        .reg-form h4 { color: #2f855a; margin: 0 0 20px 0; font-size: 1.3em; display: flex; align-items: center; gap: 10px; }
-        .form-group { margin-bottom: 18px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #4a5568; }
-        .form-group input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1em; transition: border-color 0.3s; box-sizing: border-box; }
-        .form-group input:focus { border-color: #48bb78; outline: none; }
-        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 18px; width: 100%; border-radius: 15px; font-weight: bold; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
-
-        .section-divider { text-align: center; margin: 50px 0 30px; position: relative; }
-        .section-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #cbd5e0; z-index: 1; }
-        .section-label { background: var(--lions-blue); color: white; padding: 10px 25px; border-radius: 50px; font-weight: bold; position: relative; z-index: 2; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-
-        .contact-grid { display: flex; justify-content: space-between; gap: 15px; text-align: left; }
-        .contact-box { width: 50%; }
-        .contact-box.right { text-align: right; }
-        .contact-box .role-label { color: #718096; font-size: 0.85em; font-weight: bold; text-transform: capitalize; }
-        .contact-box .name { color: #2d3748; font-size: 1.1em; font-weight: 800; display: block; margin: 4px 0; }
-        .contact-box a { color: var(--lions-gold); text-decoration: none; font-weight: bold; font-size: 1.1em; }
-
-        .table-card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 6px solid var(--lions-gold); }
-        .table-card h3 { color: var(--lions-blue); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.3em; }
-        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; }
-        table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        th { background: #edf2f7; color: #4a5568; padding: 15px; text-align: left; font-size: 0.9em; border-bottom: 2px solid #e2e8f0; }
-        td { padding: 12px 15px; border-bottom: 1px solid #f0f4f8; font-size: 0.95em; color: #444; }
-        tr:hover { background-color: #f7fafc; }
-
-        .designer-info { margin-top: 50px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 30px; color: #a0aec0; font-size: 0.9em; }
-
-        @media (max-width: 480px) {
-            .header h2 { font-size: 1.6em; }
-            .hero-title { font-size: 2em; }
-            .contact-grid { flex-direction: column; text-align: center; gap: 20px; }
-            .contact-box { width: 100%; }
-            .contact-box.right { text-align: center; }
-            .seat-dashboard { flex-wrap: wrap; }
-            #scrollTopBtn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 18px; }
-            .days-circle { width: 120px; height: 120px; }
-            .days-circle .num { font-size: 2.5em; }
-        }
+        .venue-section { text-align: center; margin-bottom: 20px; }
+        .venue-section img { width: 100%; max-width: 460px; height: auto; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        
+        .fee-card { background: #fffcf4; border: 2px dashed var(--accent); border-radius: 12px; padding: 15px; text-align: center; margin-bottom: 20px; }
+        .fee-card h3 { color: var(--primary); font-size: 14px; margin-bottom: 5px; line-height: 1.4; }
+        .fee-card .price { font-size: 26px; color: var(--accent); font-weight: bold; }
+        
+        .form-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 12px; padding: 15px; margin-bottom: 25px; }
+        .form-box h3 { font-size: 17px; margin-bottom: 15px; color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; }
+        .form-group input, .form-group select { width: 100%; padding: 11px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; outline: none; -webkit-appearance: none; }
+        .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+        
+        .btn-submit { display: block; width: 100%; padding: 12px; background: #25d366; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; transition: 0.3s; }
+        .btn-submit:hover { background: #128c7e; }
+        .instruction { font-size: 11px; color: #666; margin-top: 8px; text-align: center; line-height: 1.4; }
+        
+        .qr-section { background: #fff; border: 2px solid var(--accent); border-radius: 15px; padding: 15px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .qr-section h3 { color: var(--primary); font-size: 18px; margin-bottom: 3px; font-weight: bold; }
+        .qr-badge { background: var(--accent); color: white; display: inline-block; padding: 3px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-bottom: 10px; }
+        .qr-section img { max-width: 100%; width: 180px; height: auto; border: 1px solid #ddd; padding: 8px; border-radius: 10px; background: #fff; margin-bottom: 15px; }
+        .bank-details { background: #f9f9f9; border-top: 1px dashed #ccc; padding-top: 15px; text-align: left; width: 100%; margin: 0 auto; font-size: 12.5px; line-height: 1.6; }
+        .bank-row { margin-bottom: 5px; display: flex; flex-wrap: wrap; }
+        .bank-row:last-child { margin-bottom: 0; }
+        .bank-label { color: #555; font-weight: bold; margin-right: 5px; flex-shrink: 0; }
+        
+        .contacts-card { background: white; border-radius: 12px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .contacts-card h3 { font-size: 15px; text-align: center; margin-bottom: 15px; color: var(--primary); }
+        .contact-grid { display: flex; justify-content: space-between; gap: 10px; }
+        .contact-person { flex: 1; text-align: center; font-size: 12px; }
+        .contact-person .role { font-size: 10px; color: #777; }
+        .contact-person .name { font-weight: bold; margin: 3px 0; color: var(--primary); line-height: 1.2; }
+        .contact-person a { color: var(--accent); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 2px; }
+        
+        .list-section { background: white; border-radius: 12px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .list-section h3 { font-size: 16px; color: var(--primary); margin-bottom: 12px; text-align: center; }
+        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 400px; }
+        th, td { padding: 9px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: var(--primary); color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        .dev-footer { text-align: center; color: rgba(255, 255, 255, 0.75); font-size: 12px; margin-top: 20px; letter-spacing: 0.5px; }
+        .dev-footer a { color: #fff; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+    <div class="header">
+        <img src="logo.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e6/Lions_Clubs_International_logo.svg'" alt="Lions Logo">
+        <h1>LIONS INTERNATIONAL</h1>
+        <h2>District 325 F</h2>
+    </div>
 
-<div class="header">
-    <img src="Lions_Clubs_International_logo.svg.png" alt="Lions Logo">
-    <h2>Lions International</h2>
-    <h3>District 325 F</h3>
-</div>
-
-<div class="container">
-    <div class="ui-card">
-        <div class="hero-title">Cabinet Schooling</div>
-        <div style="font-weight: bold; color: #a0aec0; letter-spacing: 2px; text-align: center; font-size: 1.5em;">LY 2026-2027</div>
+    <div class="container">
+        <div class="title">Club PST Training</div>
         
-        <div class="days-left-circle-container">
-            <div class="days-circle">
-                <span id="daysLeftNum" class="num">00</span>
-                <span id="daysLeftText" class="text">Days to Go</span>
+        <div class="info-box">
+            <div class="info-item"><span>📅 मिति:</span> २०८३ साउन ०२ गते</div>
+            <div class="info-item"><span>📍 स्थान:</span> युनिभर्सल रिसेप्सन, सुकेधारा</div>
+            <div class="info-item"><span>⏰ समय:</span> बिहान १०:०० बजे देखि</div>
+        </div>
+
+        <div class="venue-section">
+            <img src="venue.jpg" onerror="this.style.display='none'" alt="Event Venue">
+        </div>
+
+        <div class="fee-card">
+            <h3>क्लब अध्यक्ष, सचिव र कोषाध्यक्षको लागि रजिष्ट्रेसन शुल्क</h3>
+            <div class="price">रु. १,५००/- मात्र</div>
+        </div>
+
+        <div class="qr-section">
+            <h3>रजिष्ट्रेसनका लागि</h3>
+            <div class="qr-badge">Scan to Pay</div>
+            <p style="font-size: 12.5px; color: #555; margin-bottom: 12px;">भुक्तानीको लागि क्युआर कोड स्क्यान गर्नुहोस् ।</p>
+            
+            <img src="Scan & Pay.jpg" onerror="this.src='https://via.placeholder.com/200?text=Scan+QR+Code'" alt="Scan to Pay">
+            
+            <div class="bank-details">
+                <div class="bank-row"><span class="bank-label">A/C Holder Name:</span> <span style="color: #003366; font-weight: bold;">KRISHNA JYOTI SHAKYA</span></div>
+                <div class="bank-row"><span class="bank-label">Account Number:</span> <span style="color: #e67e22; font-weight: bold; letter-spacing: 0.5px;">02000501001261</span></div>
+                <div class="bank-row"><span class="bank-label">Bank Name:</span> <span style="color: #333; font-weight: 600;">EVEREST BANK LTD.</span></div>
+                <div class="bank-row"><span class="bank-label">Bank Branch:</span> <span style="color: #333;">BALAJU BRANCH</span></div>
             </div>
         </div>
 
-        <div class="event-info">
-            <div class="info-tag">
-                <svg class="plain-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
-                मिति: २०८३ जेठ ८, ९ र १० गते
-            </div>
-            <div class="info-tag">
-                <svg class="plain-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                स्थान: गोदावरी फरेस्ट रिसोर्ट, ललितपुर
-            </div>
+        <!-- Registration Form -->
+        <div class="form-box">
+            <h3>📝 सहभागी दर्ता फारम</h3>
+            <form id="pstForm">
+                <div class="form-group">
+                    <label>सहभागीको नाम:</label>
+                    <input type="text" id="fullName" placeholder="पुरा नाम लेख्नुहोस्" required>
+                </div>
+                <div class="form-group">
+                    <label>पद (Designation):</label>
+                    <select id="designation" required>
+                        <option value="">पद छनौट गर्नुहोस्</option>
+                        <option value="President">President</option>
+                        <option value="Secretary">Secretary</option>
+                        <option value="Treasurer">Treasurer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>क्लबको नाम:</label>
+                    <select id="clubName" required>
+                        <option value="">डाटा लोड हुँदैछ...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>सम्पर्क / WhatsApp नम्बर:</label>
+                    <input type="tel" id="phoneNumber" placeholder="WhatsApp नम्बर" required>
+                </div>
+                <button type="submit" class="btn-submit">Submit & Send to WhatsApp</button>
+                <p class="instruction">* बटन थिचेपछि डेटा सेभ हुनेछ र भौचर कपी पठाउन WhatsApp खुल्नेछ ।</p>
+            </form>
+        </div>
 
-            <div id="countdownArea" class="countdown-container">
-                <div id="timerLabel" style="margin-bottom: 10px; font-weight: bold; color: var(--lions-blue);">✍🏻 Registration गर्न बाँकी दिन:</div>
-                <div id="timerGrid" class="timer-grid">
-                    <div class="timer-box"><span id="days" class="timer-val">00</span><span class="timer-lab">Days</span></div>
-                    <div class="timer-box"><span id="hours" class="timer-val">00</span><span class="timer-lab">Hrs</span></div>
-                    <div class="timer-box"><span id="minutes" class="timer-val">00</span><span class="timer-lab">Min</span></div>
-                    <div class="timer-box"><span id="seconds" class="timer-val">00</span><span class="timer-lab">Sec</span></div>
+        <div class="contacts-card">
+            <h3>📞 For more details</h3>
+            <div class="contact-grid">
+                <div class="contact-person">
+                    <div class="role">Cabinet Secretary</div>
+                    <div class="name">Pradumna Kumar Pokharel</div>
+                    <a href="tel:9851027974">9851027974</a>
+                </div>
+                <div class="contact-person">
+                    <div class="role">Cabinet Treasurer</div>
+                    <div class="name">Krishna Jyoti Shakya</div>
+                    <a href="tel:9851030055">9851030055</a>
                 </div>
             </div>
-
-            <h4 style="text-align: left; color: var(--lions-blue); margin: 15px 0 5px 0; font-weight: 800; font-size: 1.1em;">
-                📅 दोस्रो दिनको लागि (Day 2)
-            </h4>
-            <div class="seat-dashboard">
-                <div class="seat-box">
-                    <span class="seat-label label-blue">सीमित सिट</span>
-                    <span class="seat-number">40</span>
-                    <span class="seat-text">कुल कोटा</span>
-                </div>
-                <div class="seat-box">
-                    <span class="seat-label label-green">दर्ता भएको</span>
-                    <span id="registeredCount" class="seat-number">0</span>
-                    <span class="seat-text">सहभागी संख्या</span>
-                </div>
-                <div class="seat-box">
-                    <span class="seat-label label-orange">बाँकी सिट</span>
-                    <span id="remainingCount" class="seat-number">40</span>
-                    <span class="seat-text">तुरुन्त भर्नुहोस्</span>
-                </div>
-            </div>
-
-            <img src="Godavari Hotel.jpeg" alt="Godavari Hotel" class="hotel-photo">
         </div>
 
-        <h3 style="color: var(--lions-blue); border-left: 5px solid var(--lions-gold); padding-left: 10px; margin: 30px 0 20px;">रजिष्ट्रेसन विवरण</h3>
-        
-        <div class="fee-item">
-            <span class="role">GAT Teams, Chief Cluster, Cluster, Zone/Region Chairperson को लागी</span>
-            <span class="stay-detail">🌙 २ रात ३ दिन</span>
-            <span class="amount">रु. २५,०००/-</span>
-        </div>
-        <div class="fee-item">
-            <span class="role">अन्य क्याबिनेट अफिसरहरूको लागी</span>
-            <span class="stay-detail">🌙 १ रात २ दिन</span>
-            <span class="amount">रु. १९,०००/-</span>
-        </div>
-
-        <div class="notice-box">
-            📢 भुक्तानी विवरण पठाउने तरिका:
-कृपया तल विवरणहरू भरी बटन थिच्नुहोस्, त्यसपछि WhatsApp म्यासेजसँगै बैंक भौचरको फोटो पठाउनुहोला । धन्यवाद !
-        </div>
-
-        <div class="reg-form">
-            <h4>📝 सहभागी दर्ता फारम</h4>
-            <div class="form-group"><label>सहभागीको नाम:</label><input type="text" id="userName" placeholder="पुरा नाम लेख्नुहोस्"></div>
-            <div class="form-group"><label>पद (Designation):</label><input type="text" id="userRole" placeholder="तपाईँको पद लेख्नुहोस्"></div>
-            <div class="form-group"><label>क्लवको नाम:</label><input type="text" id="clubName" placeholder="तपाईको क्लवको नाम"></div>
-            <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">* बटन थिचेपछि WhatsApp खुल्नेछ, त्यहाँबाट बैङ्क भौचरको कपी पठाउनुहोस् ।</p>
-            <button class="btn-whatsapp" onclick="sendWhatsApp()">Send</button>
-        </div>
-    </div>
-
-    <div id="qrCard" class="ui-card" style="text-align: center;">
-        <h3 style="color: var(--lions-blue); margin-bottom: 20px;">Scan to Pay</h3>
-        <img src="Scan & Pay.png" alt="Scan to Pay" style="width: 100%; max-width: 300px; border-radius: 15px; border: 1px solid #eee;">
-    </div>
-
-    <div class="section-divider"><span class="section-label">📞 For more detail's</span></div>
-
-    <div class="ui-card">
-        <div class="contact-grid">
-            <div class="contact-box">
-                <span class="role-label">Cabinet Secretary</span>
-                <span class="name">Pradumna Kumar Pokharel</span>
-                <a href="tel:9851027974">9851027974</a>
-            </div>
-            <div class="contact-box right">
-                <span class="role-label">Cabinet Treasurer</span>
-                <span class="name">Krishna Jyoti Shakya</span>
-                <a href="tel:9851030055">9851030055</a>
+        <div class="list-section">
+            <h3>💵 Paid List</h3>
+            <div class="table-responsive">
+                <table id="paidTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 12%;">S.N.</th>
+                            <th>Name</th>
+                            <th>Club Name</th>
+                            <th>Designation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="4" style="text-align: center;">डाटा लोड हुँदैछ...</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
-    <div class="table-card">
-        <h3>💵 Paid List for Day 1</h3>
-        <div class="table-wrapper">
-            <table id="day1Table">
-                <thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead>
-                <tbody><tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr></tbody>
-            </table>
-        </div>
+    <div class="dev-footer">
+        Designed by : <a href="tel:9851113811">Nirajan Aryal (9851113811)</a>
     </div>
 
-    <div class="table-card">
-        <h3>💵 Paid List for Day 2</h3>
-        <div class="table-wrapper">
-            <table id="day2Table">
-                <thead><tr><th>S.N.</th><th>Name</th><th>Club Name</th><th>Designation</th></tr></thead>
-                <tbody><tr><td colspan="4" style="text-align:center; padding: 30px; color: #888;">डाटा लोड हुँदैछ...</td></tr></tbody>
-            </table>
-        </div>
-    </div>
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxeYEUDKACU_NJ5v-VGVAKzP3bzm6SJT7i5iIPmMFuF9ldhVbb-6j4tZhZx5g4Mby4H/exec";
+        const WHATSAPP_RECEIVER = "9851030055"; 
 
-    <div class="designer-info">
-        Designed by 
-        <a href="https://www.facebook.com/nirajan.aryal.92" target="_blank" style="text-decoration: none; color: #718096; font-weight: bold; border-bottom: 1px dashed #cbd5e0;">
-            <strong>Nirajan Aryal</strong>
-        </a><br>
-        <a href="tel:9851113811" style="color: #4a5568; text-decoration: none; font-weight: bold;">9851113811</a>
-    </div>
-</div>
+        async function loadInitialData() {
+            try {
+                const response = await fetch(SCRIPT_URL);
+                const data = await response.json();
+                
+                const tbody = document.getElementById('tableBody');
+                tbody.innerHTML = '';
+                
+                if(!data.paidList || data.paidList.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="4" style="text-align: center;">हालसम्म कोही पनि दर्ता हुनुभएको छैन ।</td></tr>`;
+                } else {
+                    data.paidList.forEach(item => {
+                        const row = `<tr>
+                            <td>${item.sn}</td>
+                            <td><strong>${item.name}</strong></td>
+                            <td>${item.clubName}</td>
+                            <td>${item.designation}</td>
+                        </tr>`;
+                        tbody.insertAdjacentHTML('beforeend', row);
+                    });
+                }
 
-<script>
-    var currentRegisteredCount = 0;
+                const clubSelect = document.getElementById('clubName');
+                clubSelect.innerHTML = '<option value="">तपाईंको क्लब छनौट गर्नुहोस्</option>';
+                
+                if(data.clubs && data.clubs.length > 0) {
+                    data.clubs.forEach(club => {
+                        const option = `<option value="${club}">${club}</option>`;
+                        clubSelect.insertAdjacentHTML('beforeend', option);
+                    });
+                } else {
+                    clubSelect.innerHTML = '<option value="">कुनै क्लब भेटिएन (सिट जाँच गर्नुहोस्)</option>';
+                }
 
-    // Scroll to Top logic
-    var topBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            topBtn.style.display = "block";
-        } else {
-            topBtn.style.display = "none";
-        }
-    };
-    function scrollToTop() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
-    // Countdown Timer & Event Status logic
-    function updateCountdown() {
-        const registrationDeadline = new Date("May 19, 2026 24:00:00").getTime();
-        const eventStartDate = new Date("May 22, 2026 09:00:00").getTime();
-        const eventEndDate = new Date("May 24, 2026 17:00:00").getTime(); // जेठ १० गते बेलुका ५ बजे सम्म
-        
-        const now = new Date().getTime();
-        
-        const diffReg = registrationDeadline - now;
-        const countdownArea = document.getElementById("countdownArea");
-        const qrCard = document.getElementById("qrCard");
-
-        // १. सिट संख्या र समय अनुसार दर्ता रोक्ने र क्युआर लुकाउने साविककै लजिक
-        if (currentRegisteredCount >= 40) {
-            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.1em; padding: 10px;'>🚨 निर्धारित ४० सिट संख्या पूर्ण भएकोले दर्ता प्रक्रिया बन्द गरिएको छ ! 🚨</div>";
-            if(qrCard) qrCard.style.display = "none";
-        } 
-        else if (diffReg <= 0) {
-            countdownArea.innerHTML = "<div style='font-weight: 800; color: #c53030; font-size: 1.1em; padding: 10px;'>🚨 रजिष्ट्रेसन गर्ने समय समाप्त भयो ! 🚨</div>";
-            if(qrCard) qrCard.style.display = "none";
-        } 
-        else {
-            document.getElementById("days").innerText = Math.floor(diffReg / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById("hours").innerText = Math.floor((diffReg % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = Math.floor((diffReg % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = Math.floor((diffReg % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            } catch (error) {
+                console.error("Error loading initial data:", error);
+                document.getElementById('tableBody').innerHTML = `<tr><td colspan="4" style="text-align: center; color: red;">डेटा लोड गर्न सकिएन।</td></tr>`;
+                document.getElementById('clubName').innerHTML = '<option value="">डेटा लोड भएन</option>';
+            }
         }
 
-        // २. सर्कल भित्र स्वचालित रूपमा 'Days to Go', 'Event Running' र 'Event Ended' देखाउने नयाँ लजिक
-        const daysLeftDisplay = document.getElementById("daysLeftNum");
-        const daysLeftText = document.getElementById("daysLeftText");
+        document.getElementById('pstForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const designation = document.getElementById('designation').value;
+            const clubName = document.getElementById('clubName').value;
+            const phone = document.getElementById('phoneNumber').value;
 
-        if (now < eventStartDate) {
-            // कार्यक्रम सुरु हुन बाँकी समय (Days to Go)
-            const diffEvent = eventStartDate - now;
-            const daysToEvent = Math.ceil(diffEvent / (1000 * 60 * 60 * 24));
-            daysLeftDisplay.innerText = daysToEvent.toString().padStart(2, '0');
-            daysLeftText.innerText = "Days to Go";
-            daysLeftText.style.color = "var(--lions-gold)";
-        } 
-        else if (now >= eventStartDate && now <= eventEndDate) {
-            // कार्यक्रम संचालन भइरहेको समय (Event Running)
-            daysLeftDisplay.innerText = "00";
-            daysLeftText.innerText = "Event Running";
-            daysLeftText.style.color = "#2ecc71"; // आकर्षक हरियो रङ
-        } 
-        else {
-            // कार्यक्रम समाप्त भइसकेपछिको समय (Event Ended)
-            daysLeftDisplay.innerText = "00";
-            daysLeftText.innerText = "Event Ended";
-            daysLeftText.style.color = "#e74c3c"; // रातो रङ
-        }
-    }
-    setInterval(updateCountdown, 1000);
+            const payload = { name, designation, clubName, phone };
 
-    function sendWhatsApp() {
-        if (currentRegisteredCount >= 40) {
-            alert("क्षमा गर्नुहोला, ४० सिट संख्या पूर्ण भइसकेको छ । अब थप दर्ता गर्न मिल्दैन ।");
-            return;
-        }
-        var name = document.getElementById('userName').value;
-        var role = document.getElementById('userRole').value; 
-        var club = document.getElementById('clubName').value;
-        if (name == "" || role == "" || club == "") { alert("कृपया सबै विवरणहरू भर्नुहोस् ।"); return; }
-        var message = "नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,%0a%0a" + "क्याबिनेट स्कुलिङ (२०८३) को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:%0a" + "*नाम:* " + name + "%0a" + "*पद:* " + role + "%0a" + "*क्लव:* " + club + "%0a%0a" + "मैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु ।";
-        window.open("https://wa.me/9779851030055?text=" + message, '_blank');
-    }
+            // १. ब्याकग्राउन्डमा डाटा गुगल सिटमा पठाउने (तुरुन्तै ह्वाट्सएप खोल्नका लागि await नगरिएको)
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                // ब्याकग्राउन्डमा सेभ भइसकेपछि डाटा तालिका मात्र अपडेट गर्ने
+                setTimeout(loadInitialData, 1000);
+            }).catch(err => console.error("Background save failed:", err));
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwV1NTGoTIAgttayAcev3UM5yqqBJfcmPGiFpS2NaBJXXu1g1HPnd6CgPVUiQ-5Tmdi/exec';
+            // २. ह्वाट्सएप म्यासेज ढाँचा (हजुरले दिनुभए जस्तै दुरुस्तै)
+            const message = `नमस्ते लायन कृष्ण ज्योती शाक्य ज्यू,\n\n` +
+                            `PST Training-2026 को लागि मेरो रजिष्ट्रेसन विवरण यस प्रकार छ:\n` +
+                            `*नाम:* ${name}\n` +
+                            `*क्लव:* ${clubName}\n` +
+                            `*पद:* ${designation}\n` +
+                            `*Contact Number:* ${phone}\n\n` +
+                            `मैले बैंक भौचरको फोटो यसै साथ संलग्न गरेको छु ।`;
 
-    function updateUI(data) {
-        if (!data) return;
-        updateDisplay('day1Table', data.day1);
-        updateDisplay('day2Table', data.day2);
-        
-        currentRegisteredCount = data.day2 ? data.day2.length : 0;
-        document.getElementById('registeredCount').innerText = currentRegisteredCount;
-        document.getElementById('remainingCount').innerText = Math.max(0, 40 - currentRegisteredCount);
-        
-        updateCountdown();
-    }
-
-    async function loadTableData() {
-        updateCountdown(); 
-        const cachedData = localStorage.getItem('cabinetData');
-        if (cachedData) { updateUI(JSON.parse(cachedData)); }
-        try {
-            const response = await fetch(scriptURL);
-            const data = await response.json();
-            localStorage.setItem('cabinetData', JSON.stringify(data));
-            updateUI(data);
-        } catch (error) { console.error('Error!', error); }
-    }
-
-    function updateDisplay(tableId, rows) {
-        const tbody = document.querySelector(`#${tableId} tbody`);
-        tbody.innerHTML = '';
-        if (!rows || rows.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">डाटा फेला परेन</td></tr>';
-            return;
-        }
-        rows.forEach((row, index) => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `<td>${index + 1}</td><td style="font-weight: 600; color: #2d3748;">${row.name}</td><td>${row.club}</td><td><span style="background: #edf2f7; padding: 3px 8px; border-radius: 6px; font-size: 0.9em;">${row.designation}</span></td>`;
-            tbody.appendChild(tr);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_RECEIVER}?text=${encodeURIComponent(message)}`;
+            
+            // ३. बिना कुनै विलम्ब तुरुन्तै नयाँ विन्डोमा ह्वाट्सएप खोलिदिने
+            window.open(whatsappUrl, '_blank');
+            
+            // फारम रिसेट गर्ने
+            document.getElementById('pstForm').reset();
         });
-    }
 
-    window.onload = loadTableData;
-</script>
+        loadInitialData();
+    </script>
 </body>
 </html>
